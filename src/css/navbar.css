@@ -1,5 +1,10 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+
 .container-navbar{
-    width : 80%;
+    font-family: "Inter";
+    width : 100%;
     margin : 0 auto; /* Center the navbar  horizontally*/
     background-color: #588157;
     font-size: 14px;
@@ -9,4 +14,23 @@
     display: flex;
     justify-content: center; /* Centra las opciones horizontalmente */
     width: 100%; /* Asegura que ocupe todo el espacio disponible */
+}
+
+
+@media (min-width: 375px){
+    .container-navbar{
+        max-width: 100%;
+        
+    }
+    .logo {
+        width: 100px;
+        height: auto;
+        margin-right: 50px;
+        margin-left: 50px;
+    }
+    
+    .btn-traduce-night-light{
+        margin-right: 50px;
+        
+    }
 }
