@@ -2,22 +2,27 @@
 interface Service {
         title: string;
         description: string;
+        additionalDescription: string;
         icon: string;
     }
     let services : Service[] = [
         {
             title: "Frontend Development",
-            description: "Building responsive and user-friendly websites.",
-            icon: "fa-solid fa-code"
+            description: "Experience creating dynamic and responsive website using",
+            additionalDescription: "  Astro, HTML, CSS, JavaScript, and React.",
+            icon: "fa-solid fa-laptop"
         },
         {
             title: "Backend Development",
-            description: "Creating mobile applications for iOS and Android.",
-            icon: "fa-solid fa-mobile-alt"
+            description: "I will help you with the backend of your website using",
+            additionalDescription: "FlaskAPI, PostgreSQL, and SQLAlchemy.",
+            icon: "fa-solid fa-server"
+            
         },
         {
             title: "UI/UX Design",
-            description: "Designing intuitive and engaging user interfaces.",
+            description: "Designing intuitive and engaging user interfaces using",
+            additionalDescription: " Figma",
             icon: "fa-solid fa-paint-brush"
         }
     ];
@@ -25,26 +30,27 @@ interface Service {
 
 
 
-    <section class="about-services">
-        <div class="greeting ">
-            
+    <div class="container">
+        <div class="greeting">
                 <h1>Hello 👋🏾 </h1> 
                 <h2> I’m Guillermo Obando</h2>
-                <p class="mt-3 ">Available to help you with:</p>
-            
+                <p class="mt-3 ">Available to help you with:</p>            
         </div>
         <div class="cards d-flex flex-direction-column justify-content-center align-items-center">
             {services.map((service) =>(
-                <div class="card" style="width: 18rem; height: 12rem;">
+                <div class="card" style="width: 18rem; height: 15rem;">
                     <div class="card-body">
+                    <div class="card-icon">
                       <i class={service.icon}></i>
-                      <h5 class="card-title">{service.title}</h5>
-                      <p class="card-text">{service.description}</p>
+                    </div>
+                      <h4 class="card-title mt-3 mb-4">{service.title}</h4>
+                      <p class="card-text" style="color: grey;">{service.description} <span style="color: #344E41;">{service.additionalDescription}</span> </p>
+                      
                     </div>
                 </div>
             ))}
         </div>
-    </section>
+    </div>
 
 
 
@@ -53,21 +59,15 @@ interface Service {
     @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 
-    .about-services {
-        max-width: 80%;
+    .container {
+        max-width: 100%;
         font-family: "Inter";
         /* margin-right: 600px; */
-        margin: 0 auto;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        
     }
 
     
-    .greeting {
-        margin-left: -60%;
+    .container .greeting {
+        margin-left: -50%;
         margin-top: 25px;
         
         
@@ -93,13 +93,7 @@ interface Service {
     }
     
     
-    .container-about h1 {
-        font-size: 2.5rem; /* Increase font size */
-        color: #093918;
-        text-align: center;
-        font-weight: bold; /* Make the text bold */
-        line-height: 1.5; /* Add spacing between lines */
-    }
+   
 
 
     .cards {
@@ -115,12 +109,39 @@ interface Service {
         margin-left: 20px;
         margin-top: 20px;
         border: none;
-        box-shadow: 0px 3px 20px 10px rgba(143,142,142,0.75);
-        -webkit-box-shadow: 0px 3px 20px 10px rgba(143,142,142,0.75);
-        -moz-box-shadow: 0px 3px 20px 10px rgba(143,142,142,0.75);
+        box-shadow: -2px 6px 49px -13px rgba(0,77,38,0.75);
+        -webkit-box-shadow: -2px 6px 49px -13px rgba(0,77,38,0.75);
+        -moz-box-shadow: -2px 6px 49px -13px rgba(0,77,38,0.75);
         color: rgb(5, 5, 5);
         border-radius: 10px;
         
+    }
+
+    .card-icon {
+        font-size: 1.5rem;
+        background-color: #84A98C;
+        
+        margin-bottom: 10px;
+        padding: 15px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+    }
+
+    .card-body {
+        display: flex;
+        flex-direction: column; /* Use flexbox for layout */
+        align-items: flex-start; /* Align items vertically */
+        /* Add spacing between the icon and text */
+    }
+
+
+    .card-text{
+        margin-top: -15px;
+        text-align: left;
     }
 
     @media (min-width: 375px){
@@ -138,6 +159,3 @@ interface Service {
     }
 </style>
 
-<script>
-    
-</script>

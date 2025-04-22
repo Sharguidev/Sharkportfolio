@@ -4,10 +4,11 @@
 
 .container-navbar{
     font-family: "Inter";
-    width : 100%;
+    width : 80%;
     margin : 0 auto; /* Center the navbar  horizontally*/
     background-color: #588157;
     font-size: 14px;
+    border-bottom: 1px solid #588157;
 }
 
 .navbar-nav {
