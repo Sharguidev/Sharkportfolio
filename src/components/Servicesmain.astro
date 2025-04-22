@@ -158,22 +158,31 @@ interface Service {
         cursor: pointer;
     }
 
-    @media (min-width: 375px){
-        .container{
-            max-width: 80%;
-            margin-left: 70px;
-        }
+    @media (min-width: 375px) and (max-width: 700px) {
+       
 
         .btn-reach {
             margin-left: 30px;
             margin-top: 10%;
         }
 
-        .greeting {
+        .container .greeting {
             text-align: center;
             margin: 0 auto;
+            
         }
     }
+
+    @media (min-width: 701px)  {
+       
+
+       .btn-reach {
+           margin-left: 30px;
+           margin-top: 10%;
+       }
+
+       
+   }
 
     
 </style>
