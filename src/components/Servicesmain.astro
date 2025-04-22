@@ -43,8 +43,8 @@ interface Service {
                     <div class="card-icon">
                       <i class={service.icon}></i>
                     </div>
-                      <h4 class="card-title mt-3 mb-4">{service.title}</h4>
-                      <p class="card-text" style="color: grey;">{service.description} <span style="color: #344E41;">{service.additionalDescription}</span> </p>
+                      <h4 class="card-title mt-3 mb-4" style="font-weight: bold; font-size: 16px; ">{service.title}</h4>
+                      <p class="card-text" style="color: grey; font-size: 14px;">{service.description} <span style="color: #344E41;">{service.additionalDescription}</span> </p>
                       
                     </div>
                 </div>
@@ -159,17 +159,22 @@ interface Service {
     }
 
     @media (min-width: 375px){
-        .about-services{
+        .container{
             max-width: 80%;
             margin-left: 70px;
         }
-    }
 
-    @media (max-width: 375px){
-        .container-about h1{
-            max-width: 80%;
-            margin-left: -50px;
+        .btn-reach {
+            margin-left: 30px;
+            margin-top: 10%;
+        }
+
+        .greeting {
+            text-align: center;
+            margin: 0 auto;
         }
     }
+
+    
 </style>
 
