@@ -1,7 +1,25 @@
-<div class="container" style="background-color: #A3B18A; opacity=0.3" >
-<h1>
-    About Me
-</h1>
+<div class="container">
+    <h1 class="title">
+        About Me
+    </h1>
+    <div class="card mb-3" >
+        <div class="row g-0">
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">Short Introduction 🧔🏽</h5>
+                    <p class="card-text"> I’m a passionate full-stack developer with experience in building dynamic and responsive web applications. I love bringing ideas to life through clean code and thoughtful design. Let’s build something awesome together!</p>
+                    <p class="card-title" style="font-weight: bold; font-size: 18px; margin-left: 50px; margin-bottom: 15px ">Wanna know more?</p>
+                    <div class="buttons">
+                        <button class="btn-nutshell">Me in a 🥜</button>
+                        <button class="btn-rock">Let’s Rock 🎸</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <img src="./src/assets/fotoCV.png" class="img-fluid rounded-circle mt-2" alt="..." style="width: 200px; height: 200px;">
+            </div>
+        </div>
+    </div>
 </div>
 
 <style>
@@ -10,11 +28,55 @@
     .container {
         max-width: 100%;
         font-family: "Inter";
-        margin-top: 10%;
-        
+        height: 400px;
+        background-color: #A3B18A;   
+        position: relative;
+    }
+    
+    .title {
+        position: relative;
+        margin-top: 10px;
+        text-align: end;
+        margin-right: 10%;
+        font-size: 28px;
+        font-weight: bold;
     }
 
-    h1{
+    .card {
+        margin-top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 10px;
+        width: 73%;
+    }
 
+    .card-title {
+        text-align: start;
+    }
+    .card-text {
+        margin-top: 2%;
+        text-align: start;
+    }
+
+    .buttons {
+        display: flex;
+        gap: 10px;
+       
+    }
+    .btn-nutshell {
+        background-color: #344E41;
+        color: #ffffff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .btn-rock {
+        background-color: #344E41;
+        color: #ffffff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
     }
 </style>
