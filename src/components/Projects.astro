@@ -37,13 +37,13 @@ interface Service {
         </div>
         <div class="cards d-flex flex-direction-column justify-content-center align-items-center">
             {services.map((service) =>(
-                <div class="card" style="width: 18rem; height: 15rem;">
+                <div class="card" style="width: 18rem; ">
                     <img src={service.img} class="card-img-top" alt="...">
                     <div class="card-body">
                     
                       <h4 class="card-title mt-3 mb-4" style="font-weight: bold; font-size: 16px; ">{service.title}</h4>
                       <p class="card-text" style="color: grey; font-size: 14px;">{service.description} <span style="color: #344E41;">{service.additionalDescription}</span> </p>
-                      
+                      <button class="btn-nutshell">Me in a 🥜</button>
                     </div>
                 </div>
             ))}
@@ -94,6 +94,7 @@ interface Service {
 
     .card{
         width: 20rem;
+        height: fit-content;
         margin-left: 20px;
         margin-top: 20px;
         border: none;
@@ -123,6 +124,15 @@ interface Service {
         flex-direction: column; /* Use flexbox for layout */
         align-items: flex-start; /* Align items vertically */
         /* Add spacing between the icon and text */
+    }
+
+    .btn-nutshell {
+        background-color: #344E41;
+        color: #ffffff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
     }
 
 
