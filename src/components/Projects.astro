@@ -32,13 +32,13 @@ interface Service {
 
     <div class="container">
         <div class="greeting">
-                <h1>Hello 👋🏾 </h1> 
-                <h2> I’m Guillermo Obando</h2>
-                <p class="mt-3 ">Available to help you with:</p>            
+                <h1>Latest Projects </h1> 
+                <p >I'm always working in exciting projects</p>            
         </div>
         <div class="cards d-flex flex-direction-column justify-content-center align-items-center">
             {services.map((service) =>(
                 <div class="card" style="width: 18rem; height: 15rem;">
+                    <img src="..." class="card-img-top" alt="...">
                     <div class="card-body">
                     <div class="card-icon">
                       <i class={service.icon}></i>
@@ -68,7 +68,7 @@ interface Service {
 
     
     .container .greeting {
-        margin-left: -50%;
+        margin-left: -45%;
         margin-top: 25px;
         
         
@@ -79,15 +79,8 @@ interface Service {
         margin-left: -140px;
         font-weight: bold;
         
-        
-    }
-    .greeting h2 {
-        font-size: 1.50rem; /* Increase font size */
-        margin-top: 0.5rem;
-        font-weight: bold;
-        
-    }
-    
+    }    
+  
     .greeting p{
         margin-left: -50px;
     }
