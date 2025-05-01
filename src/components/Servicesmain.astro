@@ -2,27 +2,23 @@
 interface Service {
         title: string;
         description: string;
-        additionalDescription: string;
         icon: string;
     }
     let services : Service[] = [
         {
             title: "Frontend Development",
-            description: "Experience creating dynamic and responsive website using",
-            additionalDescription: "  Astro, HTML, CSS, JavaScript, and React.",
+            description: "I create beautiful, fast, and mobile-friendly websites that make your business stand out online.",
             icon: "fa-solid fa-laptop"
         },
         {
             title: "Backend Development",
-            description: "I will help you with the backend of your website using",
-            additionalDescription: "FlaskAPI, PostgreSQL, and SQLAlchemy.",
+            description: "I make sure everything behind your website runs smoothly—like contact forms, databases, and user logins—so your site works perfectly.",
             icon: "fa-solid fa-server"
             
         },
         {
             title: "UI/UX Design",
-            description: "Designing intuitive and engaging user interfaces using",
-            additionalDescription: " Figma",
+            description: "I design websites that are easy to use and look great, giving your visitors a smooth and enjoyable experience.",
             icon: "fa-solid fa-paint-brush"
         }
     ];
@@ -44,7 +40,7 @@ interface Service {
                       <i class={service.icon}></i>
                     </div>
                       <h4 class="card-title mt-3 mb-4" style="font-weight: bold; font-size: 16px; ">{service.title}</h4>
-                      <p class="card-text" style="color: grey; font-size: 14px;">{service.description} <span style="color: #344E41;">{service.additionalDescription}</span> </p>
+                      <p class="card-text" style="color: grey; font-size: 14px;">{service.description} </p>
                       
                     </div>
                 </div>

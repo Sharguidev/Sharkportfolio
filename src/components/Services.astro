@@ -1,6 +1,7 @@
 ---
 interface Service {
         title: string;
+        price: string;
         description: string;
         
         
@@ -8,12 +9,14 @@ interface Service {
     let services : Service[] = [
         {
             title: "Frontend Development",
+            price: "$250 per day",
             description: "I create beautiful, fast, and mobile-friendly websites that make your business stand out online.",
         
             
         },
         {
             title: "Backend Development",
+            price: "$350 per day",
             description: "I make sure everything behind your website runs smoothly—like contact forms, databases, and user logins—so your site works perfectly.",
            
             
@@ -21,6 +24,7 @@ interface Service {
         },
         {
             title: "UI/UX Design",
+            price: "$100 per day",
             description: "I design websites that are easy to use and look great, giving your visitors a smooth and enjoyable experience.",
             
             
@@ -37,18 +41,19 @@ interface Service {
         </div>
         <div class="cards d-flex flex-direction-column justify-content-center align-items-center">
             {services.map((service) =>(
-                <div class="card" style="width: 18rem; ">
+                <div class="card" style="width: 20rem; ">
                    
                     <div class="card-body">
-                    
-                      <h4 class="card-title mt-3 mb-4" style="font-weight: bold; font-size: 16px; ">{service.title}</h4>
+        
+                      <h4 class="card-title mt-3 mb-2" style="font-weight: bold; font-size: 24px; ">{service.title}</h4>
+                      <h5 class="card-title  mb-4" style="font-weight: bold;">{service.price}</h5>
                       <p class="card-text" style="color: grey; font-size: 14px;">{service.description} </p>
                       <button class="btn-rock">Let’s Rock 🎸</button>
                     </div>
                 </div>
             ))}
         </div>
-        <button class="btn-reach">Discover More 👀</button>
+        <button class="btn-reach">Peek Inside 💆🏾</button>
     </div>
 
 
