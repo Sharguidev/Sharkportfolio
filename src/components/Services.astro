@@ -2,28 +2,28 @@
 interface Service {
         title: string;
         description: string;
-        additionalDescription: string;
-        img: string;
+        
+        
     }
     let services : Service[] = [
         {
-            title: "Roomies",
-            description: "This was a project made for new college students to find a roommate or to find a room to rent in a non-expensive community.",
-            additionalDescription: "  Astro, HTML, CSS, JavaScript, and React.",
-            img: ""
+            title: "Frontend Development",
+            description: "I create beautiful, fast, and mobile-friendly websites that make your business stand out online.",
+        
+            
         },
         {
             title: "Backend Development",
-            description: "I will help you with the backend of your website using",
-            additionalDescription: "FlaskAPI, PostgreSQL, and SQLAlchemy.",
-            img: ""
+            description: "I make sure everything behind your website runs smoothly—like contact forms, databases, and user logins—so your site works perfectly.",
+           
+            
             
         },
         {
             title: "UI/UX Design",
-            description: "Designing intuitive and engaging user interfaces using",
-            additionalDescription: " Figma",
-            img: ""
+            description: "I design websites that are easy to use and look great, giving your visitors a smooth and enjoyable experience.",
+            
+            
         }
     ];
 ---
@@ -32,23 +32,23 @@ interface Service {
 
     <div class="container">
         <div class="greeting mt-5">
-                <h1>Latest Projects </h1> 
-                <p >I'm always working in exciting projects</p>            
+                <h1>Services</h1> 
+                <p >I'm a passionate developer ready to rock your porojects</p>            
         </div>
         <div class="cards d-flex flex-direction-column justify-content-center align-items-center">
             {services.map((service) =>(
                 <div class="card" style="width: 18rem; ">
-                    <img src={service.img} class="card-img-top" alt="...">
+                   
                     <div class="card-body">
                     
                       <h4 class="card-title mt-3 mb-4" style="font-weight: bold; font-size: 16px; ">{service.title}</h4>
-                      <p class="card-text" style="color: grey; font-size: 14px;">{service.description} <span style="color: #344E41;">{service.additionalDescription}</span> </p>
-                      <button class="btn-nutshell">Me in a 🥜</button>
+                      <p class="card-text" style="color: grey; font-size: 14px;">{service.description} </p>
+                      <button class="btn-rock">Let’s Rock 🎸</button>
                     </div>
                 </div>
             ))}
         </div>
-        <button class="btn-reach">View more 👀</button>
+        <button class="btn-reach">Discover More 👀</button>
     </div>
 
 
@@ -59,9 +59,15 @@ interface Service {
 
 
     .container {
+        
         max-width: 100%;
         font-family: "Inter";
-        /* margin-right: 600px; */
+        height: 500px;
+        background-color: rgba(163, 177, 138, 0.3); /* Color verde con 80% de opacidad */   
+        position: relative;
+        padding-top: 2px;
+        margin-top: 20px;
+    
     }
 
     
@@ -127,13 +133,15 @@ interface Service {
         /* Add spacing between the icon and text */
     }
 
-    .btn-nutshell {
+    .btn-rock {
         background-color: #344E41;
         color: #ffffff;
         border: none;
-        padding: 10px 20px;
+        padding: 5px 10px;
         border-radius: 5px;
         cursor: pointer;
+        
+        margin-left: 20%;
     }
 
 
@@ -151,7 +159,9 @@ interface Service {
         border-radius: 5px;
         font-size: 1rem;
         margin-top: 5%;
-        margin-left: 60%;
+        display: flex;
+        align-items: start;
+        margin-left: 16%; 
         cursor: pointer;
     
     }
