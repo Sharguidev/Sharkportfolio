@@ -2,7 +2,7 @@
 interface Service {
         title: string;
         price: string;
-        description: string;
+        description: string[];
         
         
     }
@@ -10,22 +10,37 @@ interface Service {
         {
             title: "Frontend Development",
             price: "$250 per day",
-            description: "I create beautiful, fast, and mobile-friendly websites that make your business stand out online.",
+            description: [
+                "Meeting 1:1",
+                "Custom websites tailored to your brand",
+                "Mobile-friendly designs",
+                "Fast loading times for a better user experience",
+                "Built with modern tools for performance and scalability"
+            ]
         
             
         },
         {
             title: "Backend Development",
             price: "$350 per day",
-            description: "I make sure everything behind your website runs smoothly—like contact forms, databases, and user logins—so your site works perfectly.",
-           
-            
-            
+            description: [
+                "Meeting 1:1",
+                "Smooth and secure website functionality",
+                "Set up user accounts, contact forms, and more",
+                "Manage and store data safely",
+                "Reliable performance even as your site grows"
+        ]
         },
         {
             title: "UI/UX Design",
             price: "$100 per day",
-            description: "I design websites that are easy to use and look great, giving your visitors a smooth and enjoyable experience.",
+            description: [
+                "Meeting 1:1",
+                "Clean User-friendly and visually appealing designs",
+                "Prototypes to visualize ideas before building",
+                "Focus on your brand's identity and goals",
+                "Designs that look good on all devices",
+            ]
             
             
         }
@@ -37,7 +52,7 @@ interface Service {
     <div class="container" id="services">
         <div class="greeting mt-5">
                 <h1>Services</h1> 
-                <p >I'm a passionate developer ready to rock your porojects</p>            
+                <p >I'm a passionate developer ready to rock your projects</p>            
         </div>
         <div class="cards d-flex flex-direction-column justify-content-center align-items-center">
             {services.map((service) =>(
@@ -47,7 +62,9 @@ interface Service {
         
                       <h4 class="card-title mt-3 mb-2" style="font-weight: bold; font-size: 24px; ">{service.title}</h4>
                       <h5 class="card-title  mb-4" style="font-weight: bold;">{service.price}</h5>
-                      <p class="card-text" style="color: grey; font-size: 14px;">{service.description} </p>
+                      <ul class="card-text" style="color: grey; font-size: 14px;">{service.description.map((item)=>(
+                        <li>{item}</li>
+                      ))} </ul>
                       <button class="btn-rock">Let’s Rock 🎸</button>
                     </div>
                 </div>
@@ -64,13 +81,15 @@ interface Service {
 
 
     .container {
-        
         max-width: 100%;
         font-family: "Inter";
-        height: 550px;
+        height: fit-content;
+        /* max-height: 100vh;
+        overflow: auto; */
         background-color: rgba(163, 177, 138, 0.3); /* Color verde con 80% de opacidad */   
         position: relative;
         padding-top: 2px;
+        padding-bottom: 20px;
         margin-top: 20px;
     
     }
@@ -78,7 +97,7 @@ interface Service {
     
     .container .greeting {
         text-align: start;
-       margin-left: 9%;
+       margin-left: 13%;
         margin-top: 25px;
         
         
@@ -142,8 +161,7 @@ interface Service {
         padding: 5px 10px;
         border-radius: 5px;
         cursor: pointer;
-        
-        margin-left: 20%;
+        margin: 0 auto; /* Center the button */
     }
 
 
@@ -163,7 +181,7 @@ interface Service {
         margin-top: 5%;
         display: flex;
         align-items: start;
-        margin-left: 16%; 
+        margin-left: 12%; 
         cursor: pointer;
     
     }

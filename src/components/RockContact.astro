@@ -4,21 +4,32 @@
 <div class="container" id="rock-contact">
     <form>
         <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Name</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="John Doe" required>
+          <label for="name" class="form-label">Name</label>
+          <input type="email" class="form-control" id="name" aria-describedby="emailHelp" placeholder="John Doe" required>
         </div>
         <div class="mb-3">
           <label for="email" class="form-label">Email Address</label>
           <input type="email" class="form-control" id="email" placeholder="JoDOe@gmail.com" required>
         </div>
         <div class="mb-3">
-            <label for="message" class="form-label">Email Address</label>
-            <textarea  class="form-control" id="email" placeholder="Example: Hello! I was wonderig if we can schedule a google meet to talk about my project." required/>
+            <label for="message" class="form-label">Message</label>
+            <textarea  class="form-control" id="message" placeholder="Example: Hello! I was wonderig if we can schedule a google meet to talk about my project." required/>
           </div>
         
         <button type="submit" class="btn-submit">Let’s Rock 🎸</button>
       </form>
 </div>
+
+<script>
+    document.addEventListener('input', (event) => {
+        const target = event.target as HTMLElement | null; // Explicitly type the target
+        if (target && target.tagName.toLowerCase() === 'textarea') {
+            const textarea = target as HTMLTextAreaElement; // Narrow the type to HTMLTextAreaElement
+            textarea.style.height = 'auto'; // Reset height to calculate new height
+            textarea.style.height = `${textarea.scrollHeight}px`; // Set height based on content
+        }
+    });
+</script>
 
 
 <style>
@@ -26,7 +37,7 @@
 .container {
     max-width: 80%;
     font-family: "Inter";
-    height: fit-content;
+    height: auto;
     position: relative;
     padding-top: 5%;
     margin-bottom: 10%;
@@ -34,6 +45,31 @@
     box-shadow: -2px 6px 49px -13px rgba(0,77,38,0.75);
         -webkit-box-shadow: -2px 6px 49px -13px rgba(0,77,38,0.75);
         -moz-box-shadow: -2px 6px 49px -13px rgba(0,77,38,0.75);
+}
+
+input[type="email"],
+input[type="text"]
+ {
+    width: 80%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    margin: 0 auto;
+    resize: none;
+
+
+}
+textarea {
+    width: 80%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    margin: 0 auto;
+    resize: none;
+    height: auto;
+    overflow: hidden;
 }
 
 
@@ -57,13 +93,16 @@
         margin-left: -50px;
     }
 
-
-    label {
-        display: flex;
-        align-items: center;;
+    form .form-label {
+        display: block;
+        text-align: left;
+        width: 80%;
+        margin: 0 auto;
+        margin-bottom: 5px;
     }
 
     .btn-submit {
+        margin: 5px 0 5px 0;
         background-color: #344E41;
         color: #ffffff;
         border: none;

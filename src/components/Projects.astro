@@ -43,7 +43,7 @@ interface Service {
                     
                       <h4 class="card-title mt-3 mb-4" style="font-weight: bold; font-size: 16px; ">{service.title}</h4>
                       <p class="card-text" style="color: grey; font-size: 14px;">{service.description} <span style="color: #344E41;">{service.additionalDescription}</span> </p>
-                      <button class="btn-nutshell">Me in a 🥜</button>
+                      <button class="btn-projects">Know More</button>
                     </div>
                 </div>
             ))}
@@ -123,11 +123,12 @@ interface Service {
     .card-body {
         display: flex;
         flex-direction: column; /* Use flexbox for layout */
-        align-items: flex-start; /* Align items vertically */
+        align-items: center; /* Align items vertically  to center everything in the card*/
         /* Add spacing between the icon and text */
     }
 
-    .btn-nutshell {
+    .btn-projects {
+        /*margin: 0 auto;  to center just the button*/
         background-color: #344E41;
         color: #ffffff;
         border: none;
