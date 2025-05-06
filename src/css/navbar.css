@@ -23,14 +23,12 @@
         max-width: 100%;
     }
     .logo {
-        width: 100px;
+        width: 120px;
         height: auto;
-        margin-right: 50px;
-        margin-left: 50px;
-    }
-    
-    .btn-traduce-night-light{
-        margin-right: 50px;
+        margin-right: 5%;
         
     }
+    
+    
+    
 }
