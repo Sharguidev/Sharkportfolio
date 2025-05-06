@@ -1,16 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
-
 html {
     scroll-behavior: smooth;
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
-}
-body {
-    font-family: 'Inter';
-   
+    box-sizing: border-box; /* Ensure consistent box model */
+    
 }
 
+body {
+    font-family: 'Inter';
+    margin: 0; /* Remove default body margins */
+}
+
+@media (min-width: 701px) and (max-width: 1400px) {
+    .container {
+        max-width: 100%;
+        font-family: "Inter";
+    }
+}
