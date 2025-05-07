@@ -17,6 +17,30 @@
     width: 100%; /* Asegura que ocupe todo el espacio disponible */
 }
 
+body.light-mode {
+    background-color: #f0f0f0;
+    color: black;
+    
+
+}
+body.dark-mode {
+    background-color: #000000;
+    color: white;
+    
+}
+
+body.light-mode .navbar {
+    background-color: #dad7cd; /* Light navbar background */
+    color: #000000; /* Dark navbar text */
+    /* background-image: url(./../assets/Principal_nav.png); */
+}
+
+body.dark-mode .navbar {
+    background-color: #344e41; /* Light navbar background */
+    color: #ffffff; /* Dark navbar text */
+    /* background-image: url(./../assets/Positivo_nav.png); */
+}
+
 
 @media (min-width: 375px){
     .container-navbar{
