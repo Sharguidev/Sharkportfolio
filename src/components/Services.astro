@@ -65,13 +65,23 @@ interface Service {
                       <ul class="card-text" style="color: grey; font-size: 14px;">{service.description.map((item)=>(
                         <li>{item}</li>
                       ))} </ul>
-                      <button class="btn-rock">Let’s Rock 🎸</button>
+                      <a href="#rock-contact" class="btn-rock" onclick="scrollToContact(event)">Let’s Rock 🎸</a>
                     </div>
                 </div>
             ))}
         </div>
         <button class="btn-reach">Peek Inside 💆🏾</button>
     </div>
+
+    <script>
+        function scrollToContact(event: MouseEvent) {
+          event.preventDefault(); // Prevent the default anchor behavior
+          const contactSection = document.getElementById("rock-contact");
+          if (contactSection) {
+            contactSection.scrollIntoView({ behavior: "smooth" }); // Smooth scroll to the section
+          }
+        }
+      </script>
 
 
 
@@ -88,8 +98,8 @@ interface Service {
         overflow: auto; */
         background-color: rgba(163, 177, 138, 0.3); /* Color verde con 80% de opacidad */   
         position: relative;
-        padding-top: 2px;
-        padding-bottom: 20px;
+        padding-top: 10px;
+        padding-bottom: 100px;
         margin-top: 20px;
     
     }
@@ -162,6 +172,7 @@ interface Service {
         border-radius: 5px;
         cursor: pointer;
         margin: 0 auto; /* Center the button */
+        text-decoration:none;
     }
 
 

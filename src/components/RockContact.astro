@@ -1,23 +1,26 @@
-<div class="greeting mt-5">
-    <h1>Let’s Rock 🎸</h1>           
-</div>
 <div class="container" id="rock-contact">
-    <form>
-        <div class="mb-3">
-          <label for="name" class="form-label">Name</label>
-          <input type="email" class="form-control" id="name" aria-describedby="emailHelp" placeholder="John Doe" required>
-        </div>
-        <div class="mb-3">
-          <label for="email" class="form-label">Email Address</label>
-          <input type="email" class="form-control" id="email" placeholder="JoDOe@gmail.com" required>
-        </div>
-        <div class="mb-3">
-            <label for="message" class="form-label">Message</label>
-            <textarea  class="form-control" id="message" placeholder="Example: Hello! I was wonderig if we can schedule a google meet to talk about my project." required/>
-          </div>
-        
-        <button type="submit" class="btn-submit">Let’s Rock 🎸</button>
-      </form>
+    <div class="greeting mt-5">
+        <h1>Let’s Rock 🎸</h1>           
+    </div>
+    <div class="container-rock">
+
+        <form>
+            <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input type="email" class="form-control" id="name" aria-describedby="emailHelp" placeholder="John Doe" required>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email Address</label>
+              <input type="email" class="form-control" id="email" placeholder="JoDOe@gmail.com" required>
+            </div>
+            <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea  class="form-control" id="message" placeholder="Example: Hello! I was wonderig if we can schedule a google meet to talk about my project." required/>
+              </div>
+            
+            <button type="submit" class="btn-submit">Let’s Rock 🎸</button>
+          </form>
+    </div>
 </div>
 
 <script>
@@ -33,13 +36,18 @@
 
 
 <style>
+.container{
+    padding-top: 10px;
+    padding-bottom: 100px;
+}    
 
-.container {
+.container-rock {
     max-width: 80%;
     font-family: "Inter";
     height: auto;
     position: relative;
     padding-top: 5%;
+    margin-left: 10%;
     margin-bottom: 10%;
     border-radius: 20px;
     box-shadow: -2px 6px 49px -13px rgba(0,77,38,0.75);
