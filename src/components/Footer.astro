@@ -69,7 +69,8 @@
             .pie-pagina .grupo-1 {
                 width: 100%;
                 max-width: 1200px;
-                margin: 0 auto;
+                margin-bottom: 20px;
+                
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
                 grid-gap: 20px;
@@ -79,7 +80,7 @@
             .pie-pagina .grupo-1 .box ul {
                 list-style: none;
                 padding: 0;
-                margin-left: 0;
+                margin-left: 10%;
             }
 
             .pie-pagina .grupo-1 .box ul li a{
@@ -110,7 +111,7 @@
             .pie-pagina .grupo-1 .box h2{
                 color: #fff;
                 margin-bottom: 25px;
-                margin-left: 20%;
+                margin-left: 30%;
                 font-size: 20px;
             }
 
@@ -120,7 +121,7 @@
             }   
 
             .pie-pagina .grupo-1 .red-social{
-                margin-left: 25%;
+                margin-left: 30%;
             }
 
             .pie-pagina .grupo-1 .red-social a{
@@ -173,7 +174,7 @@
             }
 
             /* Estilos para dispositivos móviles */
-            @media screen and (max-width:800px){
+            @media (min-width:370px) and (max-width:800px){
                 .pie-pagina .grupo-1{
                     width: 100%;
                     grid-template-columns: 1fr;
@@ -181,11 +182,30 @@
                     padding: 35px 0px;
                 }
 
+               
+
                 .pie-pagina .grupo-1 .box ul{
-                    display: flex;
+                    margin-left: 30%;
+                    padding: 0;
+                }
+                .pie-pagina .grupo-1 .red-social{
+                    margin-left: 30%;
+                }
+
+                .pie-pagina .grupo-2 {
+                    display : flex;
                     flex-direction: column;
-                    align-items: center;
-                    justify-content: center;
+                    
+
+                    
+                }
+                .pie-pagina .grupo-2 .dev{
+                    margin-right: 8%;
+                    
+                }
+
+                .pie-pagina .grupo-2 .right{
+                    margin-left: 15%;
                 }
             }
         </style>
