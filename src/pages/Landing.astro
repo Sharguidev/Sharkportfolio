@@ -1,5 +1,6 @@
 <div class="landing-page">
     <div class="construction-card">
+        <img src="./src/assets/Principal_S.png" alt="Logo" class="logo">
         <h1>Site Under Construction 🚧</h1>
         <p>We're working hard to bring you an amazing experience. Stay tuned!</p>
         <div class="video-controls">
@@ -11,7 +12,7 @@
             id="jazz-player" 
             width="0" 
             height="0" 
-            src="https://www.youtube.com/embed/DWcJFNfaw9c?enablejsapi=1" 
+            src="https://www.youtube.com/embed/jfKfPfyJRdk?enablejsapi=1" 
             frameborder="0" 
             allow="autoplay; encrypted-media" 
             allowfullscreen
@@ -30,6 +31,7 @@
 }
 
 .construction-card {
+    margin-top: 10px;
     background-color: #ffffff;
     padding: 20px;
     border-radius: 10px;
@@ -51,8 +53,9 @@
 
 .video-controls {
     display: flex;
-    justify-content: space-around;
-    margin-bottom: 20px;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
 }
 
 .btn {
@@ -80,7 +83,7 @@
     // Play the jazz playlist
     if (playBtn && jazzPlayer) { // Null check for jazzPlayer
       playBtn.addEventListener("click", () => {
-        jazzPlayer.src = "https://www.youtube.com/embed/DWcJFNfaw9c?autoplay=1&enablejsapi=1";
+        jazzPlayer.src = "https://www.youtube.com/embed/jfKfPfyJRdk?autoplay=1&enablejsapi=1";
       });
     }
 
