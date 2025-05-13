@@ -1,20 +1,101 @@
----
-import Servicesmain from "../components/Servicesmain.astro"
-import AboutMe from "../components/AboutMe.astro"
-import Projects from "../components/Projects.astro"
-import Services from "../components/Services.astro"
-import RockContact from "../components/RockContact.astro"
----
-
 <div class="landing-page">
-    
-    
+    <div class="construction-card">
+        <h1>Site Under Construction 🚧</h1>
+        <p>We're working hard to bring you an amazing experience. Stay tuned!</p>
+        <div class="video-controls">
+            <button id="play-btn" class="btn">Play Jazz 🎷</button>
+            <button id="pause-btn" class="btn">Pause ⏸️</button>
+            <button id="resume-btn" class="btn">Resume ▶️</button>
+        </div>
+        <iframe 
+            id="jazz-player" 
+            width="0" 
+            height="0" 
+            src="https://www.youtube.com/embed/DWcJFNfaw9c?enablejsapi=1" 
+            frameborder="0" 
+            allow="autoplay; encrypted-media" 
+            allowfullscreen
+        ></iframe>
+    </div>
 </div>
 
 <style>
 .landing-page {
     text-align: center;
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
 }
 
+.construction-card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+}
+
+.construction-card h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.construction-card p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.video-controls {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.btn {
+    background-color: #588157;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn:hover {
+    background-color: #344e41;
+}
 </style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const jazzPlayer = document.getElementById("jazz-player") as HTMLIFrameElement | null; // Typecast to HTMLIFrameElement
+    const playBtn = document.getElementById("play-btn");
+    const pauseBtn = document.getElementById("pause-btn");
+    const resumeBtn = document.getElementById("resume-btn");
+
+    // Play the jazz playlist
+    if (playBtn && jazzPlayer) { // Null check for jazzPlayer
+      playBtn.addEventListener("click", () => {
+        jazzPlayer.src = "https://www.youtube.com/embed/DWcJFNfaw9c?autoplay=1&enablejsapi=1";
+      });
+    }
+
+    // Pause the jazz playlist
+    if (pauseBtn && jazzPlayer) { // Null check for jazzPlayer
+      pauseBtn.addEventListener("click", () => {
+        jazzPlayer.contentWindow?.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+      });
+    }
+
+    // Resume the jazz playlist
+    if (resumeBtn && jazzPlayer) { // Null check for jazzPlayer
+      resumeBtn.addEventListener("click", () => {
+        jazzPlayer.contentWindow?.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+      });
+    }
+  });
+</script>
