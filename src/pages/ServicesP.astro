@@ -46,6 +46,40 @@ const services : Service[] = [
                     "Reliable performance even as your site grows"
             ]
             },
+            {
+                title: "Bundle 1",
+                price: "Starts in $2800",
+                description: [
+                    "Meeting 1:1",
+                    "UX/UI Design",
+                    "Frontend Development",
+                    "Backend Development",
+                    
+            ]
+            },
+            {
+                title: "Bundle 2",
+                price: "Starts in $3500",
+                description: [
+                    "Meeting 1:1",
+                    "UX/UI Design",
+                    "Frontend Development",
+                    "Backend Development",
+                    "SEO Optimization"
+            ]
+            },
+            {
+                title: "Bundle 3",
+                price: "Starts in $5000",
+                description: [
+                    "Meeting 1:1",
+                    "UX/UI Design",
+                    "Frontend Development",
+                    "Backend Development",
+                    "SEO Optimization",
+                    "Content Creation"
+            ]
+            }
         ];
 ---
 
@@ -54,20 +88,25 @@ const services : Service[] = [
     <h1>Welcome to the Services Page!</h1>
     <p>I'll be happy to help you turn your ideas into reality</p>
     <div class="cards d-flex flex-direction-column justify-content-center align-items-center">
-      {services.map((service: Service) => (
-        <div class="card" style="width: 20rem;">
-          <div class="card-body">
-            <h3 class="card-title">{service.title}</h3>
-            <p class="card-price">{service.price}</p>
-            <ul class="card-description">
-              {service.description.map((item) => (
-                <li>{item}</li>
-              ))}
-            </ul>
-            <a href="/#rock-contact" class="btn-rock" >Let’s Rock 🎸</a>
-          </div>
+        <div class="row g-0">
+            {services.map((service: Service) => (
+                <div class="col-md-4 mb-4">
+                        <div class="card" style="width: 20rem; ">
+                        <div class="card-body">
+                            <h3 class="card-title">{service.title}</h3>
+                            <p class="card-price">{service.price}</p>
+                            <ul class="card-description">
+                            {service.description.map((item) => (
+                                <li>{item}</li>
+                            ))}
+                            </ul>
+                            <a href="/#rock-contact" class="btn-rock" >Let’s Rock 🎸</a>
+                        </div>
+                        </div>
+
+                </div>
+            ))}
         </div>
-      ))}
     </div>
   </div>
 </Layout>
@@ -79,10 +118,10 @@ const services : Service[] = [
   }
 
   .cards {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+    gap: 0px; /* Adjust spacing between cards */
     justify-content: center;
-    gap: 20px;
   }
 
   .card {
@@ -90,6 +129,7 @@ const services : Service[] = [
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: fit-content;
   }
 
   .card-title {
