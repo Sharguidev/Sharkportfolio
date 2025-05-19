@@ -6,7 +6,7 @@ interface Service {
         
         
     }
-    let services : Service[] = [
+     const services : Service[] = [
         {
             title: "Frontend Development",
             price: "$250 per day",
@@ -70,7 +70,7 @@ interface Service {
                 </div>
             ))}
         </div>
-        <button class="btn-reach">Peek Inside 💆🏾</button>
+        <a href="/ServicesP" class="btn-reach">Peek Inside 💆🏾</a>
     </div>
 
     <script>
@@ -184,17 +184,17 @@ interface Service {
     .btn-reach {
         background-color: #344E41;
         color: white;
-        border: none; 
-        left: 100%;
-        padding: 10px 20px;
+        border: none;
+        padding: 10px 20px; /* Adjust padding for better size */
         border-radius: 5px;
         font-size: 1rem;
-        margin-top: 5%;
-        display: flex;
-        align-items: start;
-        margin-left: 12%; 
+        display: inline-block; /* Prevent it from stretching */
+        text-align: left; /* Align text to the left */
         cursor: pointer;
-    
+        text-decoration: none;
+        width: auto; /* Ensure the button width is based on content */
+        margin: 20px 0; /* Add spacing above and below */
+        align-self: flex-start; /* Align the button to the start of the container */
     }
 
     @media (min-width: 375px) and (max-width: 700px) {

@@ -1,0 +1,126 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+interface Service {
+  title: string;
+  price: string;
+  description: string[];
+}
+
+
+const services : Service[] = [
+            {
+                title: "UI/UX Design",
+                price: "$100 per day",
+                description: [
+                    "Meeting 1:1",
+                    "Clean User-friendly and visually appealing designs",
+                    "Prototypes to visualize ideas before building",
+                    "Focus on your brand's identity and goals",
+                    "Designs that look good on all devices",
+                ]
+                
+                
+            },
+            {
+                title: "Frontend Development",
+                price: "$250 per day",
+                description: [
+                    "Meeting 1:1",
+                    "Custom websites tailored to your brand",
+                    "Mobile-friendly designs",
+                    "Fast loading times for a better user experience",
+                    "Built with modern tools for performance and scalability"
+                ]
+            
+                
+            },
+            {
+                title: "Backend Development",
+                price: "$350 per day",
+                description: [
+                    "Meeting 1:1",
+                    "Smooth and secure website functionality",
+                    "Set up user accounts, contact forms, and more",
+                    "Manage and store data safely",
+                    "Reliable performance even as your site grows"
+            ]
+            },
+        ];
+---
+
+<Layout>
+  <div class="services-page">
+    <h1>Welcome to the Services Page!</h1>
+    <p>I'll be happy to help you turn your ideas into reality</p>
+    <div class="cards d-flex flex-direction-column justify-content-center align-items-center">
+      {services.map((service: Service) => (
+        <div class="card" style="width: 20rem;">
+          <div class="card-body">
+            <h3 class="card-title">{service.title}</h3>
+            <p class="card-price">{service.price}</p>
+            <ul class="card-description">
+              {service.description.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+            <a href="/#rock-contact" class="btn-rock" >Let’s Rock 🎸</a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .services-page {
+    text-align: center;
+    padding: 20px;
+  }
+
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .card-price {
+    font-size: 1.2rem;
+    color: #588157;
+    margin-bottom: 10px;
+  }
+
+  .card-description {
+    list-style: none;
+    padding: 0;
+  }
+
+  .card-description li {
+    margin-bottom: 5px;
+  }
+
+  .btn-rock {
+        background-color: #344E41;
+        color: #ffffff;
+        border: none;
+        padding: 10px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: 0 auto; /* Center the button */
+        text-decoration:none;
+    }
+</style>
