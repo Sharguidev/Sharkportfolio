@@ -22,6 +22,7 @@ interface Service {
             icon: "fa-solid fa-paint-brush"
         }
     ];
+    import BacktoTop from "./BacktoTop.astro";
 ---
 
 
@@ -46,7 +47,9 @@ interface Service {
                 </div>
             ))}
         </div>
-        <button class="btn-reach">Reach me Out  🫶🏾</button>
+        <a href="#rock-contact" class="btn-reach">Reach me Out  🫶🏾</a>
+        
+
     </div>
 
 
@@ -148,6 +151,9 @@ interface Service {
         margin-top: 5%;
         margin-left: -55%;
         cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+        margin-top: 20px;
     }
 
     @media (min-width: 375px) and (max-width: 700px) {
