@@ -52,14 +52,14 @@ const services : Service[] = [
                 description: [
                     "Meeting 1:1",
                     "UX/UI Design",
-                    "Frontend Development",
-                    "Backend Development",
+                    "Frontend Development"
+                    
                     
             ]
             },
             {
                 title: "Bundle 2",
-                price: "Starts in $3500",
+                price: "Starts in $4200",
                 description: [
                     "Meeting 1:1",
                     "UX/UI Design",
@@ -68,45 +68,40 @@ const services : Service[] = [
                     "SEO Optimization"
             ]
             },
-            {
-                title: "Bundle 3",
-                price: "Starts in $5000",
-                description: [
-                    "Meeting 1:1",
-                    "UX/UI Design",
-                    "Frontend Development",
-                    "Backend Development",
-                    "SEO Optimization",
-                    "Content Creation"
-            ]
-            }
+            // {
+            //     title: "Bundle 3",
+            //     price: "Starts in $5000",
+            //     description: [
+            //         "Meeting 1:1",
+            //         "UX/UI Design",
+            //         "Frontend Development",
+            //         "Backend Development",
+            //         "SEO Optimization",
+                    
+            // ]
+            // }
         ];
 ---
 
 <Layout>
   <div class="services-page">
-    <h1>Welcome to the Services Page!</h1>
+    <h1 class="mt-5">Welcome to the Services Page!</h1>
     <p>I'll be happy to help you turn your ideas into reality</p>
-    <div class="cards d-flex flex-direction-column justify-content-center align-items-center">
-        <div class="row g-0">
-            {services.map((service: Service) => (
-                <div class="col-md-4 mb-4">
-                        <div class="card" style="width: 20rem; ">
-                        <div class="card-body">
-                            <h3 class="card-title">{service.title}</h3>
-                            <p class="card-price">{service.price}</p>
-                            <ul class="card-description">
-                            {service.description.map((item) => (
-                                <li>{item}</li>
-                            ))}
-                            </ul>
-                            <a href="/#rock-contact" class="btn-rock" >Let’s Rock 🎸</a>
-                        </div>
-                        </div>
-
-                </div>
-            ))}
+    <div class="cards">
+      {services.map((service: Service) => (
+        <div class="card" >
+          <div class="card-body">
+            <h3 class="card-title">{service.title}</h3>
+            <p class="card-price">{service.price}</p>
+            <ul class="card-description">
+              {service.description.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+            <a href="/#rock-contact" class="btn-rock">Let’s Rock 🎸</a>
+          </div>
         </div>
+      ))}
     </div>
   </div>
 </Layout>
@@ -114,22 +109,28 @@ const services : Service[] = [
 <style>
   .services-page {
     text-align: center;
-    padding: 20px;
+    /* padding: 20px; */
   }
 
   .cards {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
-    gap: 0px; /* Adjust spacing between cards */
+    grid-template-columns: repeat(3, auto); /* 3 cards per row */
+    gap: 20px; /* Adjust spacing between cards */
     justify-content: center;
   }
 
+
   .card {
-    border: 1px solid #ddd;
-    border-radius: 8px;
+    width: 18rem;
     padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: none;
+    box-shadow: -2px 6px 49px -13px rgba(0,77,38,0.75);
+        -webkit-box-shadow: -2px 6px 49px -13px rgba(0,77,38,0.75);
+        -moz-box-shadow: -2px 6px 49px -13px rgba(0,77,38,0.75);
+    border-radius: 8px;
+    
     height: fit-content;
+    
   }
 
   .card-title {
