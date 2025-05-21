@@ -46,6 +46,26 @@ body.dark-mode .card{
     color: white;
 }
 
+body.dark-mode .accordion-item{
+    background-color: #000000;
+    color: white;
+}
+
+body.dark-mode #FAQservices{
+    background-color: #000000;
+    color: white;
+}
+
+body.dark-mode .accordion-header{
+    background-color: #000000;
+    color: white;
+}
+
+body.dark-mode .accordion-button{
+    background-color: #000000;
+    color: white;
+}
+
 @media (min-width: 375px){
     .container-navbar{
         max-width: 100%;
