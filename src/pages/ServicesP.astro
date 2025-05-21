@@ -81,6 +81,7 @@ const services : Service[] = [
             // ]
             // }
         ];
+        import FAQservices from "../components/FAQservices.astro";
 ---
 
 <Layout>
@@ -104,6 +105,10 @@ const services : Service[] = [
       ))}
     </div>
   </div>
+
+  <div class="container-FAQservices mt-5">
+    <h2>Frequently Asked Questions</h2>
+    <FAQservices />
 </Layout>
 
 <style>
@@ -163,5 +168,16 @@ const services : Service[] = [
         cursor: pointer;
         margin: 0 auto; /* Center the button */
         text-decoration:none;
+    }
+
+    .container-FAQservices{
+        margin: 0 auto;
+        width: 80%;
+        padding: 20px;
+        background-color: #f8f9fa;
+        border-radius: 8px;
+        box-shadow: -2px 6px 49px -13px rgba(0,77,38,0.75);
+        -webkit-box-shadow: -2px 6px 49px -13px rgba(0,77,38,0.75);
+        -moz-box-shadow: -2px 6px 49px -13px rgba(0,77,38,0.75);
     }
 </style>
