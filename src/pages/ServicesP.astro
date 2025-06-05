@@ -124,19 +124,21 @@ const services : Service[] = [
 
 
   .card {
-    width: 18rem;
-    padding: 20px;
-    border: none;
-    box-shadow: -2px 6px 49px -13px rgba(0,77,38,0.75);
+     width: 20rem;
+        height: fit-content;
+        margin-left: 20px;
+        margin-top: 20px;
+        border: none;
+        box-shadow: -2px 6px 49px -13px rgba(0,77,38,0.75);
         -webkit-box-shadow: -2px 6px 49px -13px rgba(0,77,38,0.75);
         -moz-box-shadow: -2px 6px 49px -13px rgba(0,77,38,0.75);
-    border-radius: 8px;
-    
-    height: fit-content;
+        color: rgb(5, 5, 5);
+        border-radius: 8px;
     
   }
 
   .card-title {
+    margin: 10px 0;
     font-size: 1.5rem;
     font-weight: bold;
     margin-bottom: 10px;
@@ -148,14 +150,17 @@ const services : Service[] = [
     margin-bottom: 10px;
   }
 
-  .card-description {
-    list-style: none;
-    padding: 0;
-  }
+  
 
-  .card-description li {
-    margin-bottom: 5px;
-  }
+  .card-description {
+        text-align: left;
+        margin-bottom: 10%;
+        list-style: circle;
+        color: grey;
+        font-size: 0.9rem;
+    }
+
+ 
 
   .btn-rock {
         background-color: #344E41;
@@ -164,7 +169,7 @@ const services : Service[] = [
         padding: 10px 10px;
         border-radius: 5px;
         cursor: pointer;
-        margin: 0 auto; /* Center the button */
+        margin: 10px auto; /* Center the button */
         text-decoration:none;
     }
 
