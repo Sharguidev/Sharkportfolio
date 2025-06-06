@@ -3,32 +3,36 @@ interface Service {
         title: string;
         description: string;
         additionalDescription: string;
-        img: string;
+        img: string[];
     }
     let services : Service[] = [
         {
             title: "Roomies",
             description: "This was a project made for new college students to find a roommate or to find a room to rent in a non-expensive community.",
             additionalDescription: "  Astro, HTML, CSS, JavaScript, and React.",
-            img: ""
+            img: ["./src/assets/desk.jpeg", "./src/assets/_.jpeg", "./src/assets/_ (1).jpeg"]
+           
         },
         {
             title: "Backend Development",
             description: "I will help you with the backend of your website using",
             additionalDescription: "FlaskAPI, PostgreSQL, and SQLAlchemy.",
-            img: ""
+            img: ["/images/roomies.png"]
             
         },
         {
             title: "UI/UX Design",
             description: "Designing intuitive and engaging user interfaces using",
             additionalDescription: " Figma",
-            img: ""
+            img: ["/images/roomies.png"]
         }
     ];
+
+    import Layout from '../layouts/Layout.astro';
+    import ProjectCarousel from '../components/ProjectCarousel.astro';
 ---
 
-
+<Layout>
 
     <div class="container" id="projects">
         <div class="greeting mt-5">
@@ -36,9 +40,11 @@ interface Service {
                 <p >I'm always working in exciting projects</p>            
         </div>
         <div class="cards d-flex flex-direction-column justify-content-center align-items-center">
-            {services.map((service) =>(
-                <div class="card" style="width: 18rem; ">
-                    <img src={service.img} class="card-img-top" alt="...">
+            {services.map((service, idx) =>(
+                <div class="card" >
+                    <ProjectCarousel images={service.img} carouselId={`carousel-${idx}`}/>
+                    {/* Uncomment the line below if you want to use an image directly in the card */}
+                    {/* <img src={service.img} class="card-img-top" alt="..."> */}
                     <div class="card-body">
                     
                       <h4 class="card-title mt-3 mb-4" style="font-weight: bold; font-size: 16px; ">{service.title}</h4>
@@ -48,8 +54,10 @@ interface Service {
                 </div>
             ))}
         </div>
-        <button class="btn-reach">View more 👀</button>
+        
     </div>
+</Layout>
+
 
 
 

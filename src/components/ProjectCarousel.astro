@@ -1,0 +1,27 @@
+---
+// filepath: src/components/ProjectCarousel.astro
+interface Props {
+  images: string[];
+  carouselId: string;
+}
+
+const { images, carouselId } = Astro.props;
+---
+
+<div id={carouselId} class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    {images.map((img, idx) => (
+      <div class={`carousel-item${idx === 0 ? " active" : ""}`}>
+        <img src={img} class="d-block w-100" alt={`Project image ${idx + 1}`} />
+      </div>
+    ))}
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target={`#${carouselId}`} data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target={`#${carouselId}`} data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
