@@ -50,7 +50,7 @@ interface Service {
 
 
     <div class="container" id="services">
-        <div class="greeting mt-5">
+        <div class="greeting">
                 <h1>Services</h1> 
                 <p >I'm a passionate developer ready to rock your projects</p>            
         </div>
@@ -70,7 +70,7 @@ interface Service {
                 </div>
             ))}
         </div>
-        <a href="/ServicesP" class="btn-reach mt-5">Peek Inside 💆🏾</a>
+        <button onclick="window.location.href='/ServicesP'" class="btn-reach ">Peek Inside 💆🏾</button>
     </div>
 
     <script>
@@ -99,24 +99,25 @@ interface Service {
         background-color: rgba(163, 177, 138, 0.3); /* Color verde con 80% de opacidad */   
         position: relative;
         padding-top: 10px;
-        padding-bottom: 100px;
+        padding-bottom: 80px;
         margin-top: 20px;
         
     
     }
 
     
-    .container .greeting {
+    .greeting {
         text-align: start;
-        margin-left: 13%;
-        margin-top: 25px;
-        
-        
+        margin:5% 49% 3% 15%;
     }
+
+    
+
     
     .greeting h1 {
         font-size: 1.75rem; 
         font-weight: bold;
+        
         
     }    
   
@@ -184,32 +185,26 @@ interface Service {
     }
 
     .btn-reach {
-        background-color: #344E41;
-        color: white;
-        border: none;
-        padding: 10px 20px; 
-        border-radius: 5px;
-        font-size: 1rem;
-        cursor: pointer;
         text-decoration: none;
-        margin-left: 13%;
-        max-width: 12%;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        text-align: right;
+        background-color: #344E41;
+        color: #ffffff;
+        /* margin-top: 10%; */
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        margin:5% 60% 2% 0%;
     }
 
-    @media (min-width: 375px) and (max-width: 1020px) {
+    @media (min-width: 375px) and (max-width: 1294px) {
         .btn-reach {
             margin: 10% auto;
-            max-width: 45%;
+            max-width: fit-content;
             display: flex;
             text-align: center;  
         }
         .container .greeting {
             text-align: center;
-            margin: 0 auto;    
+            margin: 5% auto;    
         }
     }
 </style>
