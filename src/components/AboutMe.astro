@@ -1,21 +1,26 @@
 <div class="container" id="about-me">
-    <h1 class="title mt-5">
-        About Me
-    </h1>
-    <div class="card mb-3" >
-        <div class="row g-0">
-            <div class="col-md-4">
-                <img src="./src/assets/fotoCV.png" class="img rounded-circle mt-4" alt="..." >
-            </div>
-            <div class="col-md-8">
-                <div class="card-body">
-                    <h5 class="card-title">Short Introduction 🧔🏽</h5>
-                    <p class="card-text"> I’m a passionate full-stack developer with experience in building dynamic and responsive web applications. I love bringing ideas to life through clean code and thoughtful design. Let’s build something awesome together!</p>
-                    <p class="card-title" style="font-weight: bold; font-size: 18px; margin-left: 5px; margin-bottom: 15px ">Wanna know more?</p>
-                    <div class="buttons">
-                        <a href="/Nutshell" class="btn-nutshell">Me in a 🥜</a>
-                        <a href="#rock-contact" class="btn-rock">Let’s Rock 🎸</a>
+    <div class="container-aboutMe">
+        <h1 class="title mt-5">
+            About Me
+        </h1>
+        <div class="card mb-3" >
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="./src/assets/fotoCV.png" class="img rounded-circle mt-4" alt="..." >
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">Short Introduction 🧔🏽</h5>
+                        <p class="card-text"> I’m a passionate full-stack developer with experience in building dynamic and responsive web applications. I love bringing ideas to life through clean code and thoughtful design. Let’s build something awesome together!</p>
+                        <div class="know-more">
+                            <p class="card-title" style="font-weight: bold; font-size: 18px; margin-left: 5px; margin-bottom: 15px ">Wanna know more?</p>
+                            <div class="buttons">
+                                <button onclick="window.location.href='/Nutshell'" class="btn-nutshell">Me in a 🥜</button>
+                                <button onclick="window.location.href='#rock-contact'" class="btn-rock">Let’s Rock 🎸</button>
+                            </div>
+                        </div>
                     </div>
+                    
                 </div>
             </div>
         </div>
@@ -27,31 +32,37 @@
 
     .container {
         max-width: 100%;
-        height: 500px;
+        height: 600px;
         background-color: rgba(163, 177, 138, 0.3); /* Color verde con 80% de opacidad */   
         position: relative;
-        padding-top: 2px;
+        padding-top: 30px;
         padding-bottom: 100px;
         margin-top: 20px; 
         box-sizing: border-box; 
     }
+
+    .container-aboutMe {
+       
+        width: 80%;
+        height: fit-content%;
+        margin: 2% auto ;
+        /* padding: 20px; */
+    }
     
     .title {
-        position: relative;
-        margin-top: 10px;
-        text-align: start;
-        margin-left: 15%;
-        margin-bottom: 2%;
+        margin-bottom: 5%;
         font-size: 28px;
         font-weight: bold;
+        text-align: start;
+        margin-left: 5%;
     }
 
     .card {
-        margin-top: 10px;
+        margin-top: 5%;
         left: 50%;
         transform: translateX(-50%);
         border-radius: 10px;
-        width: 69%;
+        width: 80%;
         height: 70%;
         margin-left: 10px;
     }
@@ -76,9 +87,8 @@
         text-align: start;
     }
 
-    .buttons {
-        display: flex;
-        gap: 10px;
+    .know-more .buttons {
+        gap: 15%;
        
     }
     .btn-nutshell {
@@ -87,8 +97,7 @@
         border: none;
         padding: 10px 20px;
         border-radius: 5px;
-        cursor: pointer;
-        text-decoration: none;;
+        
     }
     .btn-rock {
         background-color: #344E41;
@@ -96,16 +105,21 @@
         border: none;
         padding: 10px 20px;
         border-radius: 5px;
-        cursor: pointer;
-        text-decoration: none;
+        
     }
 
-    @media (max-width: 1020px) {
+    .know-more {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    @media (max-width: 1293px) {
         
         .container {
             width: 100%;
-            height: 100%;
-            margin-top: 10px;
+            height: fit-content;
             padding-top: 10px;
             padding-bottom: 15px;
         }
@@ -116,13 +130,19 @@
             
         }
         .card {
-            width: 90%;
+            width: fit-content%;
             height: fit-content;
             margin-left: 0;
         }
         .title {
             text-align: center;
             margin-right: 0;
+        }
+        .img {
+            width: 200px;
+            height: 200px;
+            margin-left: 0;
+            
         }
     }
 </style>

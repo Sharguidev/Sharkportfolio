@@ -62,17 +62,12 @@ interface Service {
     .container {
         max-width: 100%;
         font-family: "Inter";
-        /* margin-right: 600px; */
-        padding-bottom: 100px;
-        padding-top: 10px;
+        padding-top: 40px;
     }
 
     
-    .container .greeting {
-        margin-left: -50%;
-        margin-top: 25px;
-        
-        
+     .greeting {
+        margin:5% 50% 2% 3%;
     }
     
     .greeting h1 {
@@ -148,15 +143,14 @@ interface Service {
         padding: 10px 20px;
         border-radius: 5px;
         font-size: 1rem;
-        margin-top: 5%;
-        margin-left: -55%;
+        margin:5% 51% 2% 0%;
         cursor: pointer;
         text-decoration: none;
         display: inline-block;
         margin-top: 20px;
     }
 
-    @media (min-width: 375px) and (max-width: 700px) {
+    @media (min-width: 375px) and (max-width: 701px) {
        
 
         .btn-reach {
@@ -165,17 +159,27 @@ interface Service {
 
         .container .greeting {
             text-align: center;
-            margin: 0 auto;
+             margin: 10% auto;
             
         }
     }
 
-    @media (min-width: 701px)  {
+    @media (min-width: 1294px)  {
        
 
        .btn-reach {
            margin-top: 5%;
        }
+
+       .btn-reach {
+           margin: 10% 65% 2% 2%;
+        }
+
+        .container .greeting {
+            text-align: center;
+             margin: 10% 65% 2% 8%;
+            
+        }
 
        
    }
