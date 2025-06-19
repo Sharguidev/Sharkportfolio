@@ -2,34 +2,30 @@
 interface Service {
         title: string;
         description: string;
-        additionalDescription: string;
         img: string[];
     }
     let services : Service[] = [
         {
             title: "Roomies",
             description: "This was a project made for new college students to find a roommate or to find a room to rent in a non-expensive community.",
-            additionalDescription: "  Astro, HTML, CSS, JavaScript, and React.",
-            img: ["./src/assets/St.jpg", "./src/assets/Modern.jpg", "./src/assets/St.jpg"]
+            img: ["./src/assets/roomies.png", "./src/assets/Modern.jpg", "./src/assets/St.jpg"]
            
         },
         {
-            title: "Backend Development",
-            description: "I will help you with the backend of your website using",
-            additionalDescription: "FlaskAPI, PostgreSQL, and SQLAlchemy.",
-            img: ["/images/roomies.png"]
+            title: "This Portfolio UX/UI",
+            description: "I've designed this portfolio to showcase my skills with the projects, so any client can see my work.",
+            img: ["./src/assets/Portfolio1.png", "./src/assets/Portfolio2.png", "./src/assets/Portfolio3.png"]
             
         },
         {
-            title: "UI/UX Design",
-            description: "Designing intuitive and engaging user interfaces using",
-            additionalDescription: " Figma",
-            img: ["/images/roomies.png"]
+            title: "Old Portfolio",
+            description: "First portfolio I made, it was a simple one.",
+            img: ["./src/assets/oldPortfolio1.png", "./src/assets/Oldportfolio2.png",]
         }
     ];
 
     import Layout from '../layouts/Layout.astro';
-    import ProjectCarousel from '../components/ProjectCarousel.astro';
+    import ProjectCarousel from '../components/ProjectCarousel.astro';  
 ---
 
 <Layout>
@@ -48,8 +44,7 @@ interface Service {
                     <div class="card-body">
                     
                       <h4 class="card-title mt-3 mb-4" style="font-weight: bold; font-size: 16px; ">{service.title}</h4>
-                      <p class="card-text" style="color: grey; font-size: 14px;">{service.description} <span style="color: #344E41;">{service.additionalDescription}</span> </p>
-                      <button class="btn-projects">Know More</button>
+                        <p class="card-text" style="font-size: 14px; color: #333;">{service.description}</p>
                     </div>
                 </div>
             ))}
