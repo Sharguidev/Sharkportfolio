@@ -1,18 +1,84 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import ProNutsell from "../components/ProNutsell.astro";
+import FAQsNutshell from "../components/FAQsNutshell.astro";
 ---
 
 <Layout>
   <div class="nutshell-page">
-    <h1>Welcome to the Nutshell Page!</h1>
-    <!-- Your content goes here -->
+    <h1>Me in a 🥜</h1>
+    
+    <h2 class="subtitle">History 🧔🏽</h2>
+  </div>
+  <div class="card mb-3" >
+      <div class="row g-0">
+        <div class="col-md-4">
+           <img src="./src/assets/fotoCV.png" class="figure rounded-circle mt-4"  >
+        </div>
+        <div class="col-md-8">
+          <div class="card-body ">
+            
+            <p class="card-text">My fullname is Guillermo Josue Obando Cerna, I’m 25 years old. I was born and raised in Honduras 🇭🇳 until I turned 18 since that age I emigrate here to Costa Rica 🇨🇷 to find better oportunities.
+              <br><br>
+            I’m football fan, I have like three or four teams, Real Madrid CF, Manchester United, Liga Deportiva Alajuelense y also love Real Club Deportivo España, but this last one I don’t see the games.
+              <br><br>
+            I’m a Faithfull Catholic son of a beloving God and my mother Mary, I’ve get into the faith since I was 14 yo.
+              <br><br>
+            Currently I’m Single taking things slowly, seeking for God plans.</p>
+            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+          </div>
+        </div>
+      </div>
+  </div>
+  <div class="mt-3">
+    <ProNutsell />
+  </div>
+  <div class="mt-3">
+    <FAQsNutshell />
   </div>
 </Layout>
 
 <style>
   .nutshell-page {
-    text-align: center;
-    font-family: "Inter", sans-serif;
+    
     padding: 20px;
   }
+
+  h1{
+    display: flex;
+    text-align: start;
+    margin: 5% 10% ;
+    font-weight: bold;
+  }
+
+  .subtitle {
+    margin: 5% 10% 2% 80%;
+    font-weight: bold;
+  }
+
+  .card {
+    margin: 0 auto;
+    width: 70%;
+    border: none;
+    background-color: transparent;
+  }
+
+  .figure {
+    width: 300px;
+    height: 300px;
+    margin-left: 10%;
+   
+  }
+
+  .card-text {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #7e7e7e;
+    margin-left: 5%;
+    font-weight: 500;
+  }
+  
+
+
+
 </style>
