@@ -18,7 +18,9 @@
 <Layout>
     <div class="container mt-5">
       {currentPost && (
-        <ProjectCarousel images={currentPost.img} carouselId={`carousel-${post}`} />
+        
+          <ProjectCarousel images={currentPost.img} carouselId={`carousel-${post}`} />
+
         <h1 class="title">{currentPost.title}</h1>
         <p>{currentPost.description}</p>
         <br>
@@ -47,30 +49,12 @@
 <style>
 
   .container {
-    
     max-width: 80%;
     overflow: hidden;
   }
 
-  .carousel {
-    width: 100%;
-    max-width: 600px; /* or any width you want */
-    margin: 0 auto 2rem auto; /* center and add space below */
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 24px rgba(52, 78, 65, 0.08);
-  } 
+  
 
-  .carousel-inner {
-    height: 320px; /* set desired height */
-  }
-
-  .carousel-item img {
-    width: 100%;
-    height: 320px; /* match .carousel-inner */
-    object-fit: cover; /* crop images nicely */
-    border-radius: 12px;
-  }
 
 
   .title {
