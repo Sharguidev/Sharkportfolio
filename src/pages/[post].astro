@@ -1,0 +1,19 @@
+---
+   import projects from "../components/Post"
+   import Layout from "../layouts/Layout.astro";
+
+   export function getStaticPaths () {
+      return projects.map((post) => ({
+        params: { post: post.href },
+      }));
+   }
+
+   const { post } = Astro.params;
+   const currentPost = projects.find((p) => p.href === post);
+---
+
+<Layout>
+    <div class="container">
+        
+    </div>
+</Layout>

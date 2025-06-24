@@ -1,191 +1,173 @@
 ---
-interface Service {
-        title: string;
-        description: string;
-        additionalDescription: string;
-        img: string;
-    }
-    let services : Service[] = [
-        {
-            title: "Roomies",
-            description: "This was a project made for new college students to find a roommate or to find a room to rent in a non-expensive community.",
-            additionalDescription: "  Astro, HTML, CSS, JavaScript, and React.",
-            img: ""
-        },
-        {
-            title: "Backend Development",
-            description: "I will help you with the backend of your website using",
-            additionalDescription: "FlaskAPI, PostgreSQL, and SQLAlchemy.",
-            img: ""
-            
-        },
-        {
-            title: "UI/UX Design",
-            description: "Designing intuitive and engaging user interfaces using",
-            additionalDescription: " Figma",
-            img: ""
-        }
-    ];
+interface Project {
+  title: string;
+  description: string;
+  img: string;
+}
+let projects: Project[] = [
+  {
+    title: "Roomies",
+    description:
+      "This was a project made for new college students to find a roommate or to find a room to rent in a non-expensive community.",
+    img: "./src/assets/colivio1.png",
+  },
+  {
+    title: "This Portfolio UX/UI",
+    description:
+      "I've designed this portfolio to showcase my skills with the projects, so any client can see my work.",
+    img: "./src/assets/Portfolio1.png",
+  },
+  {
+    title: "UI/UX Design",
+    description: "Designing intuitive and engaging user interfaces using",
+    img: "./src/assets/oldPortfolio1.png",
+  },
+];
 ---
 
-
-
-    <div class="container" id="projects">
-        <div class="greeting mt-5">
-                <h1>Latest Projects </h1> 
-                <p >I'm always working in exciting projects</p>            
+<div class="container" id="projects">
+  <div class="greeting mt-5">
+    <h1>Latest Projects</h1>
+    <p>I'm always working in exciting projects</p>
+  </div>
+  <div
+    class="cards d-flex flex-direction-column justify-content-center align-items-center"
+  >
+    {
+      projects.map((Project) => (
+        <div class="card" style="width: 18rem; ">
+          <img src={Project.img} class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h4
+              class="card-title mt-3 mb-4"
+              style="font-weight: bold; font-size: 16px; "
+            >
+              {Project.title}
+            </h4>
+            <p class="card-text" style="color: grey; font-size: 14px;">
+              {Project.description}{" "}
+            </p>
+          </div>
         </div>
-        <div class="cards d-flex flex-direction-column justify-content-center align-items-center">
-            {services.map((service) =>(
-                <div class="card" style="width: 18rem; ">
-                    <img src={service.img} class="card-img-top" alt="...">
-                    <div class="card-body">
-                    
-                      <h4 class="card-title mt-3 mb-4" style="font-weight: bold; font-size: 16px; ">{service.title}</h4>
-                      <p class="card-text" style="color: grey; font-size: 14px;">{service.description} <span style="color: #344E41;">{service.additionalDescription}</span> </p>
-                      <button class="btn-projects">Know More</button>
-                    </div>
-                </div>
-            ))}
-        </div>
-        <button class="btn-reach" onclick="window.location.href='/ProjectsP'">View more 👀</button>
-    </div>
-
-
+      ))
+    }
+  </div>
+  <button class="btn-reach" onclick="window.location.href='/ProjectsP'"
+    >View more 👀</button
+  >
+</div>
 
 <style>
-   
-    @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+  @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
+  .container {
+    max-width: 100%;
+    font-family: "Inter";
+    /* margin-right: 600px; */
+  }
 
+  .container .greeting {
+    text-align: end;
+    margin-right: 15%;
+    margin-top: 25px;
+  }
+
+  .greeting h1 {
+    font-size: 1.75rem; /* Increase font size */
+    margin-left: -140px;
+    font-weight: bold;
+  }
+
+  .greeting p {
+    margin-left: -50px;
+  }
+
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 20px;
+  }
+
+  .card {
+    width: 20rem;
+    height: fit-content;
+    margin-left: 20px;
+    margin-top: 20px;
+    border: none;
+    box-shadow: -2px 6px 49px -13px rgba(0, 77, 38, 0.75);
+    -webkit-box-shadow: -2px 6px 49px -13px rgba(0, 77, 38, 0.75);
+    -moz-box-shadow: -2px 6px 49px -13px rgba(0, 77, 38, 0.75);
+    color: rgb(5, 5, 5);
+    border-radius: 8px;
+  }
+
+  .card-icon {
+    font-size: 1.5rem;
+    background-color: #84a98c;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+  }
+
+  .card-body {
+    display: flex;
+    flex-direction: column; /* Use flexbox for layout */
+    align-items: center; /* Align items vertically  to center everything in the card*/
+    /* Add spacing between the icon and text */
+  }
+
+  .btn-projects {
+    /*margin: 0 auto;  to center just the button*/
+    background-color: #344e41;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .card-text {
+    margin-top: -15px;
+    text-align: left;
+  }
+
+  .btn-reach {
+    background-color: #344e41;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-top: 5%;
+    margin-left: 62%;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    width: fit-content;
+  }
+
+  @media (min-width: 375px) and (max-width: 1350px) {
     .container {
-        max-width: 100%;
-        font-family: "Inter";
-        /* margin-right: 600px; */
+      max-width: 100%;
+      font-family: "Inter";
     }
 
-    
     .container .greeting {
-        text-align: end;
-        margin-right: 15%;
-        margin-top: 25px;
-        
-        
-    }
-    
-    .greeting h1 {
-        font-size: 1.75rem; /* Increase font size */
-        margin-left: -140px;
-        font-weight: bold;
-        
-    }    
-  
-    .greeting p{
-        margin-left: -50px;
-    }
-    
-    .cards {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        margin-top: 20px;
-        gap: 20px;
-        
-    }
-
-    .card{
-        width: 20rem;
-        height: fit-content;
-        margin-left: 20px;
-        margin-top: 20px;
-        border: none;
-        box-shadow: -2px 6px 49px -13px rgba(0,77,38,0.75);
-        -webkit-box-shadow: -2px 6px 49px -13px rgba(0,77,38,0.75);
-        -moz-box-shadow: -2px 6px 49px -13px rgba(0,77,38,0.75);
-        color: rgb(5, 5, 5);
-        border-radius: 8px;
-        
-    }
-
-    .card-icon {
-        font-size: 1.5rem;
-        background-color: #84A98C;
-        margin-bottom: 10px;
-        padding: 15px;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 50px;
-        height: 50px;
-    }
-
-    .card-body {
-        display: flex;
-        flex-direction: column; /* Use flexbox for layout */
-        align-items: center; /* Align items vertically  to center everything in the card*/
-        /* Add spacing between the icon and text */
-    }
-
-    .btn-projects {
-        /*margin: 0 auto;  to center just the button*/
-        background-color: #344E41;
-        color: #ffffff;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-
-
-    .card-text{
-        margin-top: -15px;
-        text-align: left;
+      text-align: center;
+      margin: 0 auto;
     }
 
     .btn-reach {
-        background-color: #344E41;
-        color: white;
-        border: none; 
-        padding: 10px 20px;
-        border-radius: 5px;
-        font-size: 1rem;
-        margin-top: 5%;
-        margin-left: 62%;
-        cursor: pointer;
-        text-decoration: none;
-        display: inline-block;
-        width: fit-content;
-        
-        
+      display: flex;
+      justify-content: center;
+      margin: 10% auto;
     }
-
-    
-
-    @media (min-width: 375px) and (max-width: 1350px) {
-
-        .container {
-            max-width: 100%;
-            font-family: "Inter";
-            
-        }
-
-        .container .greeting {
-            text-align: center;
-            margin: 0 auto;
-            
-        }
-
-       .btn-reach {
-           
-           display: flex;
-           justify-content: center;
-           margin: 10% auto;
-       }
-
-       
-   }
-
-    
+  }
 </style>
-
