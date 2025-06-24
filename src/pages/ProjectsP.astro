@@ -1,26 +1,33 @@
 ---
-interface Service {
+// import projects from "../components/Post"
+
+
+interface Project {
         title: string;
         description: string;
         img: string[];
+        href?: string; // Optional property for navigation
     }
-    let services : Service[] = [
+    let projects : Project[] = [
         {
             title: "Colivio",
             description: "This was a project made for new college students to find a roommate or to find a room to rent in a non-expensive community.",
-            img: ["./src/assets/colivio1.png", "./src/assets/colivi2.png"]
+            img: ["./src/assets/colivio1.png", "./src/assets/colivi2.png"],
+            href: "colivio",
            
         },
         {
             title: "This Portfolio UX/UI",
             description: "I've designed this portfolio to showcase my skills with the projects, so any client can see my work.",
-            img: ["./src/assets/Portfolio1.png", "./src/assets/Portfolio2.png", "./src/assets/Portfolio3.png"]
+            img: ["./src/assets/Portfolio1.png", "./src/assets/Portfolio2.png", "./src/assets/Portfolio3.png"],
+            href: "portfolio",
             
         },
         {
             title: "Old Portfolio",
             description: "First portfolio I made, it was a simple one.",
-            img: ["./src/assets/oldPortfolio1.png", "./src/assets/Oldportfolio2.png",]
+            img: ["./src/assets/oldPortfolio1.png", "./src/assets/Oldportfolio2.png",],
+            href: "uiux",
         }
     ];
 
@@ -36,16 +43,16 @@ interface Service {
                 <p >I'm always working in exciting projects</p>            
         </div>
         <div class="cards d-flex flex-direction-column justify-content-center align-items-center">
-            {services.map((service, idx) =>(
+            {projects.map((Project, idx) =>(
                 <div class="card" >
-                    <ProjectCarousel images={service.img} carouselId={`carousel-${idx}`}/>
+                    <ProjectCarousel images={Project.img} carouselId={`carousel-${idx}`}/>
                     {/* Uncomment the line below if you want to use an image directly in the card */}
                     {/* <img src={service.img} class="card-img-top" alt="..."> */}
                     <div class="card-body">
                     
-                      <h4 class="card-title mt-3 mb-4" style="font-weight: bold; font-size: 16px; ">{service.title}</h4>
-                      <p class="card-text" style="font-size: 14px; color: #333;">{service.description}</p>
-                      <button class="btn-project-page">Dive in 🌊</button>  
+                      <h4 class="card-title mt-3 mb-4" style="font-weight: bold; font-size: 16px; ">{Project.title}</h4>
+                      <p class="card-text" style="font-size: 14px; color: #333;">{Project.description}</p>
+                         <a class="btn-project-page" href={`/${Project.href}`}>Dive in 🌊</a>
                     </div>
                 </div>
             ))}
@@ -139,6 +146,7 @@ interface Service {
         padding: 10px 20px;
         border-radius: 5px;
         cursor: pointer;
+        text-decoration: none;
     }
 
 

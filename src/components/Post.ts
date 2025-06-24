@@ -58,7 +58,7 @@ const projects: Project[] = [
 
     },
     {
-        title: "My firs Portfolio",
+        title: "My first Portfolio",
         description: "I've created this portfolio as quick as I could after graduating from 4Geeks Academy, it was my first portfolio and I wanted to show my skills as a UX/UI designer and developer.",
         description2: "I’ve tried to make it simple, so any person can interact easily with my web page. ",
         description3: "My focus with this was:",
