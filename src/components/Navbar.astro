@@ -32,16 +32,14 @@ import "./src/css/navbar.css"
             <button class="btn btn-light" type="button" id="btn-moon-sun">
               <i class="fa-solid fa-moon" id="theme-icon"></i>
             </button>
-            <button class="btn btn-light ms-3" id="btn-translate">
-              <i class="fa-solid fa-earth-europe"></i>
-            </button>
+           
           </div>
         </div>
       </nav>
 </div>
 
 <script>
-  import translatePage from "../scripts/translate.ts";
+  
 
 
   document.addEventListener("DOMContentLoaded", () => {
@@ -95,18 +93,12 @@ import "./src/css/navbar.css"
       }
     });
 
-    handleTranslation();
+    
   });
 
 
   
 
-  function handleTranslation() {
-    const button = document.getElementById("btn-translate");
-    button?.addEventListener("click", () => {  
-        translatePage('es');
-    });
-    translatePage('es');
-  }
+  
 </script>
 
