@@ -2,26 +2,26 @@ type Translation = {
     translatedText: string;
 };
 
-export default async function translatePage(targetLang = 'es'){
+export default async function translatePage(targetLang: string = 'es'): Promise<void> {
     const elements = document.querySelectorAll<HTMLElement>('[data-translate]');
     const texts : string[] = Array.from(elements).map(el => el.textContent ?? '');
 
 
-    const response = await fetch('https://translate.argosopentech.com/translate', {
+    const response = await fetch('/api/translate', {
         method: 'POST',
+        headers: {'Content-Type': 'application/json',},
         body: JSON.stringify({ 
             q :texts,
             source: 'en',
             target: targetLang,
             format: 'text'
-        }),
-        headers: {'Content-Type': 'application/json',}
+        })
     });
 
 
     if (!response.ok) {
         console.error('Translation failed:', response.statusText);
-        alert('Translation failed. Please try again later.');
+        
         return;
     }
 
