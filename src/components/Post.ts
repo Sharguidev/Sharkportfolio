@@ -15,7 +15,7 @@ interface Project {
 }
 const projects: Project[] = [
     {
-        title: "Roomies",
+        title: "Colivio",
         description: "This was a project made for new college students to find a roommate or to find a room to rent in a non-expensive community.",
         description2: "",
         description3: "The focus of this project was:",
@@ -34,7 +34,7 @@ const projects: Project[] = [
         text2: "It was a 4 weeks project, the final result was a web app that allows users to create an account, post their rooms or find a roommate, and connect with others, with basic functionalities like filter, post.",
         text3: "Thinking of a similar idea? Let's connect!",
         href: "colivio",
-        img: ["./src/assets/colivio1.png", "./src/assets/colivi2.png"]
+        img: ["../src/assets/Colivio.png", "../src/assets/Colivio2.png", "../src/assets/Colivio3.png" , "../src/assets/Colivio4.png"]
     },
     {
         title: "Portfolio UX/UI",
@@ -76,7 +76,7 @@ const projects: Project[] = [
         text2: "It took me like 2 weeks in part-time, I wanted to show my skills as a UX/UI designer and developer, so I made it as quick as I could.",
         text3: "Want something like this for yourself? Let's Rock!",
         href: "uiux",
-        img: ["./src/assets/oldPortfolio1.png", "./src/assets/Oldportfolio2.png",]
+        img: ["./src/assets/Oport.png", "./src/assets/Opor.png",]
     }
 ];
 

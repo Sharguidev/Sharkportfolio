@@ -40,7 +40,10 @@
         <br><br>
         <span class="ctaction" style="color:#344E41">{currentPost.text3}</span>
         <br><br>
-        <button class="btn-contact" onclick="window.location.href='/#rock-contact'">Let’s Rock 🎸</button>
+        <div class="btn-group">
+          <button class="btn-contact" onclick="window.location.href='/#rock-contact'">Let’s Rock 🎸</button>
+          <button class="btn-contact" onclick="window.location.href='/ProjectsP'">Back to Projects 👀</button>
+        </div>
 
       )} 
     </div>
@@ -53,7 +56,11 @@
     overflow: hidden;
   }
 
-  
+  .btn-group {
+    display: flex;
+    
+    gap: 20px;
+  }
 
 
 
