@@ -1,6 +1,9 @@
 ---
 import "./src/css/navbar.css"
+
+
 ---
+
 
 <div class="container-navbar">
     <nav class="navbar navbar-expand-lg ">
@@ -25,9 +28,12 @@ import "./src/css/navbar.css"
               </li>
             </ul>
           </div>
-          <div class="btn-night-light">
+          <div class="btn-group">
             <button class="btn btn-light" type="button" id="btn-moon-sun">
               <i class="fa-solid fa-moon" id="theme-icon"></i>
+            </button>
+            <button class="btn btn-light ms-3" id="btn-translate">
+              <i class="fa-solid fa-earth-europe"></i>
             </button>
           </div>
         </div>
@@ -35,6 +41,9 @@ import "./src/css/navbar.css"
 </div>
 
 <script>
+  import translatePage from "../scripts/translate.ts";
+
+
   document.addEventListener("DOMContentLoaded", () => {
     const body = document.body;
     const themeIcon = document.getElementById("theme-icon");
@@ -85,6 +94,19 @@ import "./src/css/navbar.css"
         localStorage.setItem("theme", "dark-mode");
       }
     });
+
+    handleTranslation();
   });
+
+
+  
+
+  function handleTranslation() {
+    const button = document.getElementById("btn-translate");
+    button?.addEventListener("click", () => {  
+        translatePage('es');
+    });
+    translatePage('es');
+  }
 </script>
 
