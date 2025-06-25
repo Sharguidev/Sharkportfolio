@@ -5,7 +5,9 @@ export const POST: APIRoute = async ({ request }) => {
 
   try {
     body = await request.json();
+    console.log('Received body:', body);
   } catch (err) {
+    console.error('Error parsing JSON body:', err);
     return new Response(
       JSON.stringify({ error: 'Invalid or missing JSON body' }),
       { status: 400, headers: { 'Content-Type': 'application/json' } }
