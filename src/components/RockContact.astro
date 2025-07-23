@@ -6,9 +6,9 @@
 
         <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" data-netlify-recaptcha="true">
             <!-- <input type="hidden" name="form-name" value="contact" /> -->
-             <p class="hidden">
+             <div class="hidden">
                 <label>Don't fill if you are human <input name="bot-field" type="text"/></label>
-             </p>
+             </div>
             <div class="mb-3">
               <label for="name" class="form-label">Name</label>
               <input type="text" class="form-control" name="name" aria-describedby="emailHelp" placeholder="John Doe" required>
@@ -21,7 +21,7 @@
                 <label for="message" class="form-label">Message</label>
                 <textarea  class="form-control" name="message" placeholder="Example: Hello! I was wonderig if we can schedule a google meet to talk about my project." required/>
               </div>
-            <div class="ms-5" data-netlify-recaptcha="true"></div>
+            <div class="captcha" data-netlify-recaptcha="true"></div>
             <button type="submit" class="btn-submit">Let’s Rock 🎸</button>
           </form>
     </div>
@@ -123,6 +123,12 @@ textarea {
         cursor: pointer;
         width: 30%;
         margin-bottom: 20px;
+    }
+
+    .captcha {
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
     }
 
     @media (max-width: 530px) {
