@@ -9,7 +9,7 @@ interface Service {
      const services : Service[] = [
         {
             title: "Frontend Development",
-            price: "$250 per day",
+            price: "$150 - $350 per day",
             description: [
                 "Meeting 1:1",
                 "Custom websites tailored to your brand",
@@ -22,7 +22,7 @@ interface Service {
         },
         {
             title: "Backend Development",
-            price: "$350 per day",
+            price: "$200 -$400 per day",
             description: [
                 "Meeting 1:1",
                 "Smooth and secure website functionality",
@@ -52,7 +52,7 @@ interface Service {
     <div class="container" id="services">
         <div class="greeting">
                 <h1>Services</h1> 
-                <p >I'm a passionate developer ready to rock your projects</p>            
+                <p >Every project is different — and so is every budget.</p>            
         </div>
         <div class="cards d-flex flex-direction-column justify-content-center align-items-center">
             {services.map((service) =>(
@@ -70,6 +70,7 @@ interface Service {
                 </div>
             ))}
         </div>
+        <p>💬 Not sure where your project fits? No worries — just tell me what you need, and I’ll guide you from there.</p>
         <button onclick="window.location.href='/ServicesP'" class="btn-reach ">Peek Inside 💆🏾</button>
     </div>
 
