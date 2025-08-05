@@ -28,10 +28,9 @@ interface Service {
 
 
     <div class="container">
-        <div class="greeting mt-5">
-                <h1>Hello 👋🏾 </h1> 
-                <h2> I’m Guillermo Obando</h2>
-                <p class="mt-3 ">Available to help you with:</p>            
+        <div class="greeting mt-5 dynamic-text">
+            <h1>Hello 👋🏾 I’m Guillermo Obando — your next Web Dev partner.</h1> 
+            <p class="mt-3 ">I craft web experiences that connect and deliver.</p>            
         </div>
         <div class="cards d-flex flex-direction-column justify-content-center align-items-center">
             {services.map((service) =>(
@@ -47,7 +46,7 @@ interface Service {
                 </div>
             ))}
         </div>
-        <button onclick="window.location.href='#rock-contact'" class="btn-reach">Reach me Out  🫶🏾</button>
+        <button onclick="window.location.href='#rock-contact'" class="dynamic-btn">Schedule a free call 📲</button>
         
     </div>
 
@@ -59,32 +58,33 @@ interface Service {
 
 
     .container {
+        margin-top: 2%;
         max-width: 100%;
         font-family: "Inter";
         padding-top: 40px;
     }
-
-    
-    .greeting {
-        margin:5% 50% 2% 3%;
-    }
+/* /home/guilherme/Documents/proyectos/Sharkportfolio/src/assets/blob-scene-haikei.svg */
     
     .greeting h1 {
         font-size: 1.75rem; /* Increase font size */
-        margin-left: -140px;
         font-weight: bold;
-        
-        
+        text-align: center;
+        margin-left: 6%; 
     }
-    .greeting h2 {
-        font-size: 1.50rem; /* Increase font size */
-        margin-top: 0.5rem;
-        font-weight: bold;
-        
+   
+    .dynamic-text {
+        mix-blend-mode: difference;
+        color: rgb(255, 255, 255); /* or black, depending on your design */
+        transition: color 0.2s;
+    }
+
+    .dynamic-text:hover {
+        color: #000000; /* Change color on hover */
+        mix-blend-mode: normal;
     }
     
     .greeting p{
-        margin-left: -50px;
+        margin-left: -10px;
     }
     
     .cards {
@@ -93,7 +93,6 @@ interface Service {
         justify-content: center;
         margin-top: 20px;
         gap: 20px;
-        
     }
 
     .card{
@@ -106,7 +105,6 @@ interface Service {
         -moz-box-shadow: -2px 6px 49px -13px rgba(0,77,38,0.75);
         color: rgb(5, 5, 5);
         border-radius: 8px;
-        
     }
 
     .card-icon {
@@ -135,24 +133,32 @@ interface Service {
         text-align: left;
     }
 
-    .btn-reach {
+    .dynamic-btn{
         background-color: #344E41;
-        color: white;
+        mix-blend-mode: normal;
+        color: white; /* Green */
+        transition: color 0.2s, mix-blend-mode 0.2s;
         border: none; 
         padding: 10px 20px;
         border-radius: 5px;
         font-size: 1rem;
-        margin:5% 51% 2% 0%;
+        margin:2% 70% 2% 0%;
         cursor: pointer;
         text-decoration: none;
         display: inline-block;
-        margin-top: 20px;
+        
     }
+
+    .dynamic-btn[style*="difference"], 
+    .dynamic-btn.blend-difference {
+    color: white;
+    mix-blend-mode: difference;
+}
 
     @media (min-width: 375px) and (max-width: 701px) {
        
 
-        .btn-reach {
+        .dynamic-btn {
            margin: 10% auto;
         }
 

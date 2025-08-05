@@ -4,11 +4,20 @@
 
 .container-navbar{
     font-family: "Inter";
-    width : 80%;
+    width : 100%;
     margin : 0 auto; /* Center the navbar  horizontally*/
-    background-color: #588157;
     font-size: 14px;
-    border-bottom: 1px solid #588157;
+}   
+
+.dynamic-text {
+  mix-blend-mode: difference;
+  color: white; /* or black, depending on your design */
+  transition: color 0.2s;
+}
+
+.dynamic-text:hover {
+  color: #000000; /* Change color on hover */
+  mix-blend-mode: normal;
 }
 
 .navbar-nav {
@@ -19,10 +28,7 @@
 }
 
 body.light-mode {
-    background-color: #f0f0f0;
     color: black;
-    
-
 }
 body.dark-mode {
     background-color: #000000;
@@ -30,13 +36,10 @@ body.dark-mode {
     
 }
 
-body.light-mode .navbar {
-    background-color: #dad7cd; /* Light navbar background */
-    color: #000000; /* Dark navbar text */
-    /* background-image: url(./../assets/Principal_nav.png); */
-}
+
 
 body.dark-mode .navbar {
+    
     background-color: #344e41; /* Light navbar background */
     color: #ffffff; /* Dark navbar text */
     /* background-image: url(./../assets/Positivo_nav.png); */
