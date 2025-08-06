@@ -11,7 +11,7 @@
 
 .dynamic-text {
   mix-blend-mode: difference;
-  color: white; /* or black, depending on your design */
+  color: rgb(255, 255, 255); /* or black, depending on your design */
   transition: color 0.2s;
 }
 
