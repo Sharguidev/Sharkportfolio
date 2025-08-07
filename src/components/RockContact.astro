@@ -52,6 +52,13 @@
     padding-bottom: 100px;
 }  
 
+.container .greeting {
+    text-align: start;
+    margin: 10% 0 2% 10%;
+    
+    
+}
+
 .card
 {
     width: 80%;
@@ -99,14 +106,11 @@ textarea {
     
     .greeting h1 {
         font-size: 1.75rem; /* Increase font size */
-        margin-left: -140px;
         font-weight: bold;
         
     }    
   
-    .greeting p{
-        margin-left: -50px;
-    }
+    
 
     form .form-label {
         display: block;
@@ -134,11 +138,64 @@ textarea {
         justify-content: center;
     }
 
-    @media (max-width: 530px) {
-        .btn-submit {
-            width: 70%;
-            padding: 10px;
-        }
-    }
+    @media (max-width: 900px) {
+  .container .greeting {
+    text-align: center;
+    margin: 8% auto 3% auto;
+  }
+  .greeting h1 {
+    margin-left: 0;
+    font-size: 1.5rem;
+  }
+  .greeting p {
+    margin-left: 0;
+  }
+  .card {
+    width: 95%;
+    padding: 10px 5vw;
+  }
+  input[type="email"],
+  input[type="text"],
+  textarea,
+  form .form-label {
+    width: 95%;
+    margin: 0 auto 10px auto;
+    font-size: 1rem;
+  }
+  .btn-submit {
+    width: 90%;
+    margin: 10px auto 20px auto;
+    display: block;
+    font-size: 1rem;
+  }
+  .captcha {
+    margin: 5% auto;
+    justify-content: center;
+  }
+}
 
+@media (max-width: 600px) {
+  .container {
+    padding-top: 5px;
+    padding-bottom: 40px;
+  }
+  .card {
+    width: 100%;
+    padding: 10px 2vw;
+  }
+  .greeting h1 {
+    font-size: 1.2rem;
+  }
+  input[type="email"],
+  input[type="text"],
+  textarea,
+  form .form-label {
+    width: 100%;
+    font-size: 0.95rem;
+  }
+  .btn-submit {
+    width: 100%;
+    font-size: 0.95rem;
+  }
+}
 </style>

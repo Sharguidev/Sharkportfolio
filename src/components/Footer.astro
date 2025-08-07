@@ -1,7 +1,4 @@
-
-
-
-		<div class="container-footer">
+<div class="container-footer">
 			<footer class="pie-pagina">
 				<div class="grupo-1">
 					<div class="box">
@@ -50,7 +47,7 @@
                 box-sizing: border-box;
                 background-image: url("./../assets/blurry-gradient-haikei.svg");
             }
-/* /home/guilherme/Documents/proyectos/Sharkportfolio/src/assets/blurry-gradient-haikei.svg */
+
             .pie-pagina {
                 width: 100%;
                 padding: 0;
@@ -168,51 +165,79 @@
                 box-sizing: border-box;
             }
 
-            /* Estilos para dispositivos móviles */
-            @media (min-width:370px) and (max-width:800px){
-                .pie-pagina .grupo-1{
-                    width: 100%;
-                    grid-template-columns: 1fr;
-                    grid-gap: 30px;
-                    padding: 35px 0px;
-                }
+            /* Mobile: up to 800px */
+@media (max-width: 800px) {
+  .pie-pagina .grupo-1 {
+    width: 100%;
+    grid-template-columns: 1fr;
+    grid-gap: 30px;
+    padding: 35px 0px;
+    justify-items: center;
+    align-items: center;
+    
+  }
 
-                .pie-pagina .grupo-1 .box .imagen{
-                    width: 100%;
-                    height: 100%;
-                    margin-left: 2%;
-                }
+  .pie-pagina .grupo-1 .box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-        
-                .pie-pagina .grupo-1 .box ul{
-                    margin-left: 35%;
-                    padding: 0;
-                }
+  .pie-pagina .grupo-1 .box .imagen {
+    width: 100%;
+    height: 100%;
+    margin-left: 0;
+    display: flex;
+    justify-content: center;
+  }
 
-                .pie-pagina .grupo-1 .box h2{
-                    margin-left: 40%;
-                    font-size: 18px;
-                    font-weight: bold;
-                }
-                .pie-pagina .grupo-1 .red-social{
-                    margin-left: 40%;
-                }
+  .pie-pagina .grupo-1 .box ul {
+    margin-left: 0;
+    padding: 0;
+    text-align: center;
+    
+  }
 
-                .pie-pagina .grupo-2 {
-                    display : flex;
-                    flex-direction: column;
-                    
+  .pie-pagina .grupo-1 .box ul li a {
+    margin-left: 0;
+    display: inline-block;
+    padding: 8px 0;
+    color: black;
+  }
 
-                    
-                }
-                .pie-pagina .grupo-2 .dev{
-                    margin-right: 8%;
-                    
-                }
+  .pie-pagina .grupo-1 .box h2 {
+    margin-left: 0;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    color: black;
+  }
 
-                .pie-pagina .grupo-2 .right{
-                    margin-left: 15%;
-                }
-            }
-        </style>
+  .pie-pagina .grupo-1 .red-social {
+    margin-left: 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .pie-pagina .grupo-2 {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+    gap: 6px;
+    
+  }
+
+  .pie-pagina .grupo-2 .dev,
+  .pie-pagina .grupo-2 .right {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    
+    
+  }
+}
+</style>
 

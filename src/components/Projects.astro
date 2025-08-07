@@ -26,7 +26,7 @@ let projects: Project[] = [
 ---
 
 <div class="container" id="projects">
-  <div class="greeting mt-5">
+  <div class="greeting">
     <h1>Latest Projects</h1>
     <p>I'm always working in exciting projects</p>
   </div>
@@ -67,20 +67,22 @@ let projects: Project[] = [
   }
 
   .container .greeting {
-    text-align: end;
-    margin-right: 15%;
+    text-align: start;
+    margin-left: 15%;
     margin-top: 25px;
   }
 
-  .greeting h1 {
-    font-size: 1.75rem; /* Increase font size */
-    margin-left: -140px;
-    font-weight: bold;
-  }
+   .greeting h1 {
+        font-size: 1.75rem; /* Increase font size */
+        font-weight: bold;
+        text-align: left;
+        margin-left: 3.5%; 
+    }
+    
+    .greeting p{
+        margin-left: 3.5%;
+    }
 
-  .greeting p {
-    margin-left: -50px;
-  }
 
   .cards {
     display: flex;
@@ -153,21 +155,89 @@ let projects: Project[] = [
     width: fit-content;
   }
 
-  @media (min-width: 375px) and (max-width: 1350px) {
-    .container {
-      max-width: 100%;
-      font-family: "Inter";
-    }
-
-    .container .greeting {
-      text-align: center;
-      margin: 0 auto;
-    }
-
-    .btn-reach {
-      display: flex;
-      justify-content: center;
-      margin: 10% auto;
-    }
+      /* Mobile: up to 700px */
+@media (max-width: 700px) {
+  .container .greeting{
+    text-align: center;
+    margin: 5% auto 0 auto;
   }
+  .greeting h1, .greeting p{
+    text-align: center;
+    margin: 0 auto;
+  }
+  .cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+  .card {
+    width: 90vw;
+    margin-left: 0;
+    margin-top: 16px;
+  }
+
+  .btn-reach {
+    width: fit-content;
+    max-width: 320px;
+    margin: 10% auto;
+  }
+  
+}
+
+/* Tablet: 701px to 1024px */
+@media (min-width: 701px) and (max-width: 1024px) {
+  .container .greeting {
+    text-align: center;
+    margin: 5% auto;
+  }
+  .greeting h1, .greeting p{
+    text-align: center;
+    margin: 0 auto;
+  }
+  .cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  .card {
+    width: 40vw;
+    min-width: 250px;
+    max-width: 350px;
+    margin-left: 0;
+  }
+  .btn-reach {
+    margin: 10% auto;
+    display: block;
+    width: fit-content;
+    max-width: 320px;
+  }
+  
+}
+
+/* Desktop: 1025px and up */
+@media (min-width: 1025px) {
+  .container .greeting {
+    text-align: left;
+    margin: 10% 0 2% 8%;
+  }
+
+  .cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  .card {
+    width: 20rem;
+    margin-left: 20px;
+    margin-top: 20px;
+  }
+  
+  .btn-reach {
+    margin: 2% 71% 2% 2%;
+    width: fit-content;
+    display: inline-block;
+  }
+}
 </style>
