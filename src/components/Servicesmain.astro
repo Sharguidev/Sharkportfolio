@@ -29,9 +29,16 @@ interface Service {
 
     <div class="container">
         <div class="greeting mt-5">
-                <h1>Hello 👋🏾 </h1> 
-                <h2> I’m Guillermo Obando</h2>
-                <p class="mt-3 ">Available to help you with:</p>            
+            <div class="d-flex">
+                <h1 class="dynamic-text hello">
+                    Hello
+                </h1>
+                <span class="emoji">
+                    👋🏾 
+                </span> 
+            </div>
+            <h1 class="dynamic-text">I’m Guillermo Obando — your next Web Dev partner.</h1> 
+            <p class="mt-3 dynamic-text">I craft web experiences that connect and deliver.</p>            
         </div>
         <div class="cards d-flex flex-direction-column justify-content-center align-items-center">
             {services.map((service) =>(
@@ -47,9 +54,8 @@ interface Service {
                 </div>
             ))}
         </div>
-        <button onclick="window.location.href='#rock-contact'" class="btn-reach">Reach me Out  🫶🏾</button>
+        <button onclick="window.location.href='#rock-contact'" class="dynamic-btn">Schedule a free call 📲</button>
         
-
     </div>
 
 
@@ -60,33 +66,43 @@ interface Service {
 
 
     .container {
+        margin-top: 2%;
         max-width: 100%;
         font-family: "Inter";
         padding-top: 40px;
     }
 
     
-    .greeting {
-        margin:5% 50% 2% 3%;
-    }
     
     .greeting h1 {
         font-size: 1.75rem; /* Increase font size */
-        margin-left: -140px;
         font-weight: bold;
-        
-        
-    }
-    .greeting h2 {
-        font-size: 1.50rem; /* Increase font size */
-        margin-top: 0.5rem;
-        font-weight: bold;
-        
+        text-align: left;
+        margin-left: 3.5%; 
     }
     
     .greeting p{
-        margin-left: -50px;
+        margin-left: 3.5%;
     }
+
+    .dynamic-text {
+        mix-blend-mode: difference;
+        color: rgb(255, 255, 255); /* or black, depending on your design */
+        transition: color 0.2s;
+    }
+
+    .dynamic-text:hover {
+        color: #000000; /* Change color on hover */
+        mix-blend-mode: normal;
+    }
+
+    .emoji {
+        font-size: 1.5rem; /* Adjust emoji size */
+        mix-blend-mode: normal;
+        position: relative;
+        z-index: 1;
+    }
+    
     
     .cards {
         display: flex;
@@ -94,7 +110,6 @@ interface Service {
         justify-content: center;
         margin-top: 20px;
         gap: 20px;
-        
     }
 
     .card{
@@ -107,7 +122,6 @@ interface Service {
         -moz-box-shadow: -2px 6px 49px -13px rgba(0,77,38,0.75);
         color: rgb(5, 5, 5);
         border-radius: 8px;
-        
     }
 
     .card-icon {
@@ -136,54 +150,99 @@ interface Service {
         text-align: left;
     }
 
-    .btn-reach {
+    .dynamic-btn{
         background-color: #344E41;
-        color: white;
+        mix-blend-mode: normal;
+        color: white; /* Green */
+        transition: color 0.2s, mix-blend-mode 0.2s;
         border: none; 
         padding: 10px 20px;
         border-radius: 5px;
         font-size: 1rem;
-        margin:5% 51% 2% 0%;
         cursor: pointer;
         text-decoration: none;
-        display: inline-block;
-        margin-top: 20px;
     }
 
-    @media (min-width: 375px) and (max-width: 701px) {
-       
+    .dynamic-btn[style*="difference"], 
+    .dynamic-btn.blend-difference {
+    color: white;
+    mix-blend-mode: difference;
+}
 
-        .btn-reach {
-           margin: 10% auto;
-        }
+    /* Mobile: up to 700px */
+@media (max-width: 700px) {
+  .container .greeting {
+    text-align: center;
+    margin: 10% auto;
+  }
+  .cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+  .card {
+    width: 90vw;
+    margin-left: 0;
+    margin-top: 16px;
+  }
+  .dynamic-btn {
+    margin: 10% auto;
+    display: block;
+    width: fit-content;
+    max-width: 320px;
+  }
+}
 
-        .container .greeting {
-            text-align: center;
-             margin: 10% auto;
-            
-        }
-    }
+/* Tablet: 701px to 1024px */
+@media (min-width: 701px) and (max-width: 1024px) {
+  .container .greeting {
+    text-align: center;
+    margin: 5% auto;
+  }
+  .cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  .card {
+    width: 40vw;
+    min-width: 250px;
+    max-width: 350px;
+    margin-left: 0;
+  }
+  .dynamic-btn {
+    margin: 5% auto;
+    display: block;
+    width: fit-content;
+    max-width: 320px;
+  }
+}
 
-    @media (min-width: 1294px)  {
-       
-
-       .btn-reach {
-           margin-top: 5%;
-       }
-
-       .btn-reach {
-           margin: 10% 65% 2% 2%;
-        }
-
-        .container .greeting {
-            text-align: center;
-             margin: 10% 65% 2% 8%;
-            
-        }
-
-       
-   }
-
+/* Desktop: 1025px and up */
+@media (min-width: 1025px) {
+  .container .greeting {
+    text-align: left;
+    margin: 10% 0 2% 8%;
+  }
+  .cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  .card {
+    width: 20rem;
+    margin-left: 20px;
+    margin-top: 20px;
+  }
+  .dynamic-btn {
+    margin: 2% 69% 2% 4%;
+    width: fit-content;
+    display: inline-block;
+  }
+  
+}
     
 </style>
 

@@ -3,24 +3,29 @@
         <h1>Let’s Rock 🎸</h1>           
     </div>
     <div class="container-rock">
-
-        <form name="contact" method="POST" data-netlify="true">
-            <input type="hidden" name="form-name" value="contact" />
-            <div class="mb-3">
-              <label for="name" class="form-label">Name</label>
-              <input type="text" class="form-control" id="name" aria-describedby="emailHelp" placeholder="John Doe" required>
-            </div>
-            <div class="mb-3">
-              <label for="email" class="form-label">Email Address</label>
-              <input type="email" class="form-control" id="email" placeholder="JoDOe@gmail.com" required>
-            </div>
-            <div class="mb-3">
-                <label for="message" class="form-label">Message</label>
-                <textarea  class="form-control" id="message" placeholder="Example: Hello! I was wonderig if we can schedule a google meet to talk about my project." required/>
-              </div>
-            
-            <button type="submit" class="btn-submit">Let’s Rock 🎸</button>
-          </form>
+        <div class="card">
+            <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" data-netlify-recaptcha="true">
+                <!-- <input type="hidden" name="form-name" value="contact" /> -->
+                <div class="hidden">
+                    <label>Don't fill if you are human <input name="bot-field" type="text"/></label>
+                </div>
+                <div class="mb-3 mt-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" name="name" aria-describedby="emailHelp" placeholder="John Doe" required>
+                </div>
+                <div class="mb-3">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" class="form-control" name="email" placeholder="JoDOe@gmail.com" required>
+                </div>
+                <div class="mb-1">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea  class="form-control" name="message" placeholder="Example: Hello! I was wonderig if we can schedule a google meet to talk about my project." required/>
+                </div>
+                <div class="captcha" data-netlify-recaptcha="true"></div>
+                <button type="submit" class="btn-submit">Let’s Rock 🎸</button>
+            </form>
+        
+        </div>
     </div>
 </div>
 
@@ -37,24 +42,32 @@
 
 
 <style>
+
+.hidden {
+    display: none;
+}    
+
 .container{
     padding-top: 10px;
     padding-bottom: 100px;
-}    
+}  
 
-.container-rock {
-    max-width: 80%;
-    font-family: "Inter";
-    height: auto;
-    position: relative;
-    padding-top: 5%;
-    margin-left: 10%;
-    margin-bottom: 10%;
-    border-radius: 8px;
-    box-shadow: -2px 6px 49px -13px rgba(0,77,38,0.75);
-        -webkit-box-shadow: -2px 6px 49px -13px rgba(0,77,38,0.75);
-        -moz-box-shadow: -2px 6px 49px -13px rgba(0,77,38,0.75);
+.container .greeting {
+    text-align: start;
+    margin: 10% 0 2% 10%;
+    
+    
 }
+
+.card
+{
+    width: 80%;
+    height: fit-content;
+    margin: 0 auto;
+    padding: 10px 20px;
+}
+
+
 
 input[type="email"],
 input[type="text"]
@@ -93,14 +106,11 @@ textarea {
     
     .greeting h1 {
         font-size: 1.75rem; /* Increase font size */
-        margin-left: -140px;
         font-weight: bold;
         
     }    
   
-    .greeting p{
-        margin-left: -50px;
-    }
+    
 
     form .form-label {
         display: block;
@@ -115,18 +125,77 @@ textarea {
         background-color: #344E41;
         color: #ffffff;
         border: none;
-        padding: 5px 10px;
+        padding: 10px 10px;
         border-radius: 5px;
         cursor: pointer;
-        width: 30%;
+        width: fit-content;
         margin-bottom: 20px;
     }
 
-    @media (max-width: 530px) {
-        .btn-submit {
-            width: 70%;
-            padding: 10px;
-        }
+    .captcha {
+        margin: 5% auto;
+        display: flex;
+        justify-content: center;
     }
 
+    @media (max-width: 900px) {
+  .container .greeting {
+    text-align: center;
+    margin: 8% auto 3% auto;
+  }
+  .greeting h1 {
+    margin-left: 0;
+    font-size: 1.5rem;
+  }
+  .greeting p {
+    margin-left: 0;
+  }
+  .card {
+    width: 95%;
+    padding: 10px 5vw;
+  }
+  input[type="email"],
+  input[type="text"],
+  textarea,
+  form .form-label {
+    width: 95%;
+    margin: 0 auto 10px auto;
+    font-size: 1rem;
+  }
+  .btn-submit {
+    width: 90%;
+    margin: 10px auto 20px auto;
+    display: block;
+    font-size: 1rem;
+  }
+  .captcha {
+    margin: 5% auto;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding-top: 5px;
+    padding-bottom: 40px;
+  }
+  .card {
+    width: 100%;
+    padding: 10px 2vw;
+  }
+  .greeting h1 {
+    font-size: 1.2rem;
+  }
+  input[type="email"],
+  input[type="text"],
+  textarea,
+  form .form-label {
+    width: 100%;
+    font-size: 0.95rem;
+  }
+  .btn-submit {
+    width: 100%;
+    font-size: 0.95rem;
+  }
+}
 </style>

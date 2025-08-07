@@ -34,7 +34,7 @@ const projects: Project[] = [
         text2: "It was a 4 weeks project, the final result was a web app that allows users to create an account, post their rooms or find a roommate, and connect with others, with basic functionalities like filter, post.",
         text3: "Thinking of a similar idea? Let's connect!",
         href: "colivio",
-        img: ["../src/assets/Colivio.png", "../src/assets/Colivio2.png", "../src/assets/Colivio3.png" , "../src/assets/Colivio4.png"]
+        img: ["https://github.com/Sharguidev/Sharkportfolio/blob/dda62a41c04460247ac6dcbebec27045a445f7cd/src/assets/Colivio.png?raw=true", "https://github.com/Sharguidev/Sharkportfolio/blob/dda62a41c04460247ac6dcbebec27045a445f7cd/src/assets/Colivio2.png?raw=true", "https://github.com/Sharguidev/Sharkportfolio/blob/dda62a41c04460247ac6dcbebec27045a445f7cd/src/assets/Colivio3.png?raw=true" , "https://github.com/Sharguidev/Sharkportfolio/blob/dda62a41c04460247ac6dcbebec27045a445f7cd/src/assets/Colivio4.png?raw=true"]
     },
     {
         title: "Portfolio UX/UI",
@@ -54,7 +54,7 @@ const projects: Project[] = [
         text2: "Now, talking about timeline it took me like 8 months in part-time, and always in the process i became with new ideas beacuse it was for me, this page for example, everything was almost ready but I had a brake through, I came with the idea to make an specific project page to talk more of the project. ",
         text3: "Want something like this for your business?",
         href: "portfolio",
-        img: ["./src/assets/Portfolio1.png", "./src/assets/Portfolio2.png", "./src/assets/Portfolio3.png"]
+        img: ["https://github.com/Sharguidev/Sharkportfolio/blob/dda62a41c04460247ac6dcbebec27045a445f7cd/src/assets/Portfolio1.png?raw=true", "https://github.com/Sharguidev/Sharkportfolio/blob/dda62a41c04460247ac6dcbebec27045a445f7cd/src/assets/Portfolio2.png?raw=true", "./src/assets/Portfolio3.png?raw=true"]
 
     },
     {
@@ -76,7 +76,7 @@ const projects: Project[] = [
         text2: "It took me like 2 weeks in part-time, I wanted to show my skills as a UX/UI designer and developer, so I made it as quick as I could.",
         text3: "Want something like this for yourself? Let's Rock!",
         href: "uiux",
-        img: ["./src/assets/Oport.png", "./src/assets/Opor.png",]
+        img: ["https://github.com/Sharguidev/Sharkportfolio/blob/dda62a41c04460247ac6dcbebec27045a445f7cd/src/assets/Oport.png?raw=true", "https://github.com/Sharguidev/Sharkportfolio/blob/dda62a41c04460247ac6dcbebec27045a445f7cd/src/assets/Opor.png?raw=true",]
     }
 ];
 

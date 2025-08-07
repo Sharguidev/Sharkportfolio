@@ -7,9 +7,22 @@ interface Service {
         
     }
      const services : Service[] = [
+         {
+             title: "UI/UX Design",
+             price: "$100 per day",
+             description: [
+                 "Meeting 1:1",
+                 "Clean User-friendly and visually appealing designs",
+                 "Prototypes to visualize ideas before building",
+                 "Focus on your brand's identity and goals",
+                 "Designs that look good on all devices",
+             ]
+             
+             
+         },
         {
             title: "Frontend Development",
-            price: "$250 per day",
+            price: "$150 - $350 per day",
             description: [
                 "Meeting 1:1",
                 "Custom websites tailored to your brand",
@@ -22,7 +35,7 @@ interface Service {
         },
         {
             title: "Backend Development",
-            price: "$350 per day",
+            price: "$200 -$400 per day",
             description: [
                 "Meeting 1:1",
                 "Smooth and secure website functionality",
@@ -31,19 +44,6 @@ interface Service {
                 "Reliable performance even as your site grows"
         ]
         },
-        {
-            title: "UI/UX Design",
-            price: "$100 per day",
-            description: [
-                "Meeting 1:1",
-                "Clean User-friendly and visually appealing designs",
-                "Prototypes to visualize ideas before building",
-                "Focus on your brand's identity and goals",
-                "Designs that look good on all devices",
-            ]
-            
-            
-        }
     ];
 ---
 
@@ -52,7 +52,7 @@ interface Service {
     <div class="container" id="services">
         <div class="greeting">
                 <h1>Services</h1> 
-                <p >I'm a passionate developer ready to rock your projects</p>            
+                <p >Every project is different — and so is every budget.</p>            
         </div>
         <div class="cards d-flex flex-direction-column justify-content-center align-items-center">
             {services.map((service) =>(
@@ -70,7 +70,8 @@ interface Service {
                 </div>
             ))}
         </div>
-        <button onclick="window.location.href='/ServicesP'" class="btn-reach ">Peek Inside 💆🏾</button>
+        <p class="text_cta">💬 Not sure where your project fits? No worries — <br>just tell me what you need, and I’ll guide you from there.</p>
+        <button onclick="window.location.href='/ServicesP'" class="btn-reach ">Build with Me 💆🏾</button>
     </div>
 
     <script>
@@ -107,22 +108,15 @@ interface Service {
 
     
     .greeting {
-        text-align: start;
-        margin:5% 49% 3% 15%;
+        text-align: end;
+        margin:5% 10% 3% 15%;
     }
 
-    
-
-    
     .greeting h1 {
         font-size: 1.75rem; 
         font-weight: bold;
-        
-        
     }    
-  
-   
-    
+
     .cards {
         display: flex;
         flex-wrap: wrap;
@@ -167,6 +161,7 @@ interface Service {
         /* Add spacing between the icon and text */
     }
 
+    
     .btn-rock {
         background-color: #344E41;
         color: #ffffff;
@@ -177,12 +172,20 @@ interface Service {
         margin: 0 auto; /* Center the button */
         text-decoration:none;
     }
-
-
+    
+    
     .card-text{
         margin-top: -15px;
         text-align: left;
     }
+    
+    .text_cta {
+        text-align: end;
+        margin: 3% 10% 1% 15%;
+        font-size: 1rem;
+        
+    }
+
 
     .btn-reach {
         text-decoration: none;
@@ -190,9 +193,11 @@ interface Service {
         color: #ffffff;
         /* margin-top: 10%; */
         border: none;
-        padding: 10px 20px;
+        padding: 10px;
+        width: fit-content;;
         border-radius: 5px;
-        margin:5% 60% 2% 0%;
+        margin: 0 10% 0 81%;
+
     }
 
     @media (min-width: 375px) and (max-width: 1294px) {
@@ -205,6 +210,11 @@ interface Service {
         .container .greeting {
             text-align: center;
             margin: 5% auto;    
+        }
+
+        .text_cta{
+            text-align: center;
+            margin: 3% 10% 1% 10%;
         }
     }
 </style>

@@ -2,7 +2,7 @@
    import projects from "../scripts/Post"
    import Layout from "../layouts/Layout.astro";
    import ProjectCarousel from "../components/ProjectCarousel.astro";
-
+   import "./../css/index.css"
    export function getStaticPaths () {
       return projects.map((post) => ({
         params: { post: post.href },

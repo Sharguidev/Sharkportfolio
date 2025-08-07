@@ -1,28 +1,43 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 
 .container-navbar{
     font-family: "Inter";
-    width : 80%;
+    width : 100%;
     margin : 0 auto; /* Center the navbar  horizontally*/
-    background-color: #588157;
     font-size: 14px;
-    border-bottom: 1px solid #588157;
+} 
+
+.container-navbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+
+  
+
+.dynamic-text {
+  mix-blend-mode: difference;
+  color: rgb(255, 255, 255); /* or black, depending on your design */
+  transition: color 0.2s;
+}
+
+.dynamic-text:hover {
+  color: #000000; /* Change color on hover */
+  mix-blend-mode: normal;
 }
 
 .navbar-nav {
     display: flex;
     justify-content: center; /* Centra las opciones horizontalmente */
     width: 100%; /* Asegura que ocupe todo el espacio disponible */
-    margin-right: 10%;
+    /* margin-right: 10%; */
 }
 
 body.light-mode {
-    background-color: #f0f0f0;
     color: black;
-    
-
 }
 body.dark-mode {
     background-color: #000000;
@@ -30,13 +45,10 @@ body.dark-mode {
     
 }
 
-body.light-mode .navbar {
-    background-color: #dad7cd; /* Light navbar background */
-    color: #000000; /* Dark navbar text */
-    /* background-image: url(./../assets/Principal_nav.png); */
-}
+
 
 body.dark-mode .navbar {
+    
     background-color: #344e41; /* Light navbar background */
     color: #ffffff; /* Dark navbar text */
     /* background-image: url(./../assets/Positivo_nav.png); */
@@ -67,17 +79,67 @@ body.dark-mode .accordion-button{
     color: white;
 }
 
-@media (min-width: 375px){
-    .container-navbar{
-        max-width: 100%;
-    }
-    .logo {
-        width: 120px;
-        height: auto;
-        margin-right: 5%;
-        
-    }
-    
-    
-    
+
+/* Mobile: up to 700px */
+@media (max-width: 700px) {
+  .container-navbar {
+    flex-direction: column;
+    align-items: center;
+    padding: 12px 0;
+    font-size: 16px;
+  }
+  .navbar-nav {
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    width: 100%;
+    gap: 12px;
+  }
+  .logo {
+    width: 100px;
+    margin: 0 0 12px 0;
+  }
+}
+
+/* Tablet: 701px to 1024px */
+@media (min-width: 701px) and (max-width: 1024px) {
+  .container-navbar {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 3vw;
+    font-size: 15px;
+  }
+  .navbar-nav {
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 24px;
+    margin-right: 0;
+  }
+  .logo {
+    width: 110px;
+    margin-right: 3vw;
+  }
+}
+
+/* Desktop: 1025px and up */
+@media (min-width: 1025px) {
+  .container-navbar {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 8vw;
+    font-size: 14px;
+  }
+  .navbar-nav {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    margin-right: 0;
+  }
+  .logo {
+    width: 120px;
+  }
 }

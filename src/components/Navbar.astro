@@ -1,5 +1,5 @@
 ---
-import "./src/css/navbar.css"
+import "./../css/navbar.css"
 
 
 ---
@@ -7,13 +7,13 @@ import "./src/css/navbar.css"
 
 <div class="container-navbar">
     <nav class="navbar navbar-expand-lg ">
-        <div class="container-fluid">
-          <a class="navbar-brand logo" href="/"><img id="theme-logo" src="./src/assets/Principal_nav.png" alt="" style="width: 150px;"></a>
+        <div class="container">
+          <a class="navbar-brand logo" href="/"><img id="theme-logo" src="https://github.com/Sharguidev/Sharkportfolio/blob/main/src/assets/Principal_nav.png?raw=true" alt="" style="width: 150px;"></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
+            <ul class="navbar-nav">
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="/#about-me">About</a>
               </li>
@@ -24,7 +24,7 @@ import "./src/css/navbar.css"
                 <a class="nav-link" href="/#projects">Projects</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/#rock-contact">Let's Rock 🎸</a>
+                <a class="nav-link dynamic-text" href="/#rock-contact">Let's Rock 🎸</a>
               </li>
             </ul>
           </div>
@@ -58,8 +58,8 @@ import "./src/css/navbar.css"
       );
       if (themeLogo) {
         themeLogo.src = savedTheme === "dark-mode" 
-        ? "./src/assets/Positivo_nav.png" 
-        : "./src/assets/Principal_nav.png";
+        ? "https://github.com/Sharguidev/Sharkportfolio/blob/main/src/assets/Positivo_nav.png?raw=true" 
+        : "https://github.com/Sharguidev/Sharkportfolio/blob/main/src/assets/Principal_nav.png?raw=true";
       }
     
     } else {
