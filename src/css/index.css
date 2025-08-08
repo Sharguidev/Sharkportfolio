@@ -22,7 +22,7 @@ body::before {
   position: fixed;
   inset: 0;
   z-index: -1;
-  background: url("./../assets/blob-scene-haikei.svg") center/cover no-repeat;
+  background: url("https://github.com/Sharguidev/Sharkportfolio/blob/main/src/assets/blob-scene-haikei.svg?raw=true") center/cover no-repeat;
   pointer-events: none;
 }
 
