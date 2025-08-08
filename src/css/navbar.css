@@ -49,7 +49,6 @@ body.dark-mode {
 
 body.dark-mode .navbar {
     
-    background-color: #344e41; /* Light navbar background */
     color: #ffffff; /* Dark navbar text */
     /* background-image: url(./../assets/Positivo_nav.png); */
 }
