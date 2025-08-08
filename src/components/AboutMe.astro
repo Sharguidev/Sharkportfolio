@@ -53,7 +53,7 @@
         margin-bottom: 5%;
         font-size: 28px;
         font-weight: bold;
-        text-align: start;
+        text-align: end;
         margin-left: 5%;
     }
 
@@ -78,10 +78,8 @@
         margin-top: 10%;
     }
 
-    .card-title {
-        text-align: start;
-        
-    }
+    
+
     .card-text {
         margin-top: 2%;
         text-align: start;
@@ -134,15 +132,107 @@
             height: fit-content;
             margin-left: 0;
         }
-        .title {
-            text-align: center;
-            margin-right: 0;
+
+        .card-title{
+            text-align: center;;
         }
+
+        .card-text{
+            text-align: center;
+            margin-left: 0;
+        }
+        
         .img {
             width: 200px;
             height: 200px;
             margin-left: 0;
             
         }
+
+        .btn-nutshell {
+            margin-bottom: 5%;
+        }
+        
     }
+
+    /* Tablet and below: stack columns, center everything */
+@media (max-width: 1024px) {
+  .container {
+    width: 100%;
+    height: fit-content;
+    padding-top: 20px;
+    padding-bottom: 30px;
+  }
+  .container-aboutMe {
+    width: 95%;
+    margin: 2% auto;
+  }
+  .title {
+    text-align: center;
+    margin-left: 0;
+    margin-bottom: 20px;
+  }
+  .card {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 20px;
+    left: 0;
+    transform: none;
+  }
+  .row.g-0 {
+    flex-direction: column;
+    align-items: center;
+  }
+  .col-md-4, .col-md-8 {
+    width: 100%;
+    max-width: 100%;
+  }
+  .img {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 20px auto;
+    display: block;
+  }
+  .card-title,
+  .card-text {
+    text-align: center;
+    margin-left: 0;
+  }
+  .know-more {
+    align-items: center;
+    justify-content: center;
+  }
+  .know-more .buttons {
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    align-items: center;
+  }
+  .btn-nutshell,
+  .btn-rock {
+    width: fit-content;
+    margin-bottom: 10px;
+  }
+}
+
+/* Mobile: stack everything, smaller paddings */
+@media (max-width: 600px) {
+  .container {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .img {
+    width: 100px;
+    height: 100px;
+  }
+  .title {
+    font-size: 22px;
+  }
+  .card-title {
+    font-size: 16px;
+  }
+  .card-text {
+    font-size: 14px;
+  }
+}
 </style>
