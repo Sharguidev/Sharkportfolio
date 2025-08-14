@@ -63,13 +63,15 @@ let projects: Project[] = [
   .container {
     max-width: 100%;
     font-family: "Inter";
+    background-color: rgba(163, 177, 138, 0.3); /* Color verde con 80% de opacidad */   
+    height: 700px;
     /* margin-right: 600px; */
   }
 
   .container .greeting {
     text-align: start;
     margin-left: 15%;
-    margin-top: 10px;
+    margin-top: 5%;
   }
 
    .greeting h1 {
@@ -77,6 +79,7 @@ let projects: Project[] = [
         font-weight: bold;
         text-align: left;
         margin-left: 3.5%; 
+        padding-top: 3%;
     }
     
     .greeting p{
@@ -104,6 +107,10 @@ let projects: Project[] = [
     color: rgb(5, 5, 5);
     border-radius: 8px;
   }
+
+  .card:hover {
+      transform: scale(1.05);
+    }
 
   .card-icon {
     font-size: 1.5rem;
