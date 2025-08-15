@@ -5,7 +5,7 @@
     font-family: "Inter";
     width : 100%;
     margin : 0 auto; /* Center the navbar  horizontally*/
-    font-size: 14px;
+    
 } 
 
 .container-navbar .container {
@@ -19,6 +19,7 @@
   mix-blend-mode: difference;
   color: rgb(255, 255, 255); /* or black, depending on your design */
   transition: color 0.2s;
+  font-size: 1rem;
 }
 
 
