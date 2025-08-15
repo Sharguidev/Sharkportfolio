@@ -7,7 +7,11 @@ import FunFAQs from "../components/FunFAQs.astro";
 import "./../css/index.css";
 ---
 
-<Layout>
+<Layout
+    title="Custom Website Development | Sharguidev"
+    description="Professional web development services for small businesses and startups. Fast, responsive, and SEO-friendly websites."
+    canonical="https://sharguidev.com/Nutshell"
+>
   <div class="nutshell-page">
     <h1>Me in a 🥜</h1>
     
@@ -16,12 +20,12 @@ import "./../css/index.css";
   <div class="card mb-5" >
       <div class="row g-0">
         <div class="col-md-4">
-           <img src="https://github.com/Sharguidev/Sharkportfolio/blob/main/src/assets/yoghibli.webp?raw=true" class="figure rounded-circle mt-4"  >
+           <img src="https://github.com/Sharguidev/Sharkportfolio/blob/hero-section-improvements/src/assets/foto_formal.webp?raw=true" class="figure rounded-circle mt-4"  >
         </div>
         <div class="col-md-8">
           <div class="card-body ">
             
-            <p class="card-text">My fullname is Guillermo Josue Obando Cerna, I’m 25 years old. I was born and raised in Honduras 🇭🇳 until I turned 18 since that age I emigrate here to Costa Rica 🇨🇷 to find better oportunities.
+            <p class="card-text ">My fullname is Guillermo Josue Obando Cerna, I’m 25 years old. I was born and raised in Honduras <span class="flag">🇭🇳</span> until I turned 18 since that age I emigrate here to Costa Rica <span class="flag">🇨🇷</span> to find better oportunities.
               <br><br>
               I’m football fan, I have like three or four teams, Real Madrid CF, Manchester United, Liga Deportiva Alajuelense y also love Real Club Deportivo España, but this last one I don’t see the games.
                 <br><br>
@@ -74,18 +78,30 @@ import "./../css/index.css";
   }
 
   .figure {
-    width: 300px;
-    height: 300px;
-    margin-left: 10%;
-   
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    box-shadow: -2px 6px 49px -13px rgba(0,77,38,0.75);
+    -webkit-box-shadow: -2px 6px 49px -13px rgba(0,77,38,0.75);
+    -moz-box-shadow: -2px 6px 49px -13px rgba(0,77,38,0.75);
+    border-radius: 50%;
+    margin-left: 15%;
+    margin-top: 5%;
+    display: block;
   }
+
+ 
 
   .card-text {
     font-size: 16px;
     line-height: 1.5;
-    color: #7e7e7e;
+    color: #000000;
     margin-left: 5%;
     font-weight: 500;
+  }
+
+  .flag {
+      mix-blend-mode: normal;
   }
   
    @media (max-width: 1293px) { 

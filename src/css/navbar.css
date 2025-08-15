@@ -5,7 +5,7 @@
     font-family: "Inter";
     width : 100%;
     margin : 0 auto; /* Center the navbar  horizontally*/
-    font-size: 14px;
+    
 } 
 
 .container-navbar .container {
@@ -15,19 +15,14 @@
     width: 100%;
 }
 
-
-  
-
 .dynamic-text {
   mix-blend-mode: difference;
   color: rgb(255, 255, 255); /* or black, depending on your design */
   transition: color 0.2s;
+  font-size: 1rem;
 }
 
-.dynamic-text:hover {
-  color: #000000; /* Change color on hover */
-  mix-blend-mode: normal;
-}
+
 
 .navbar-nav {
     display: flex;
@@ -42,14 +37,9 @@ body.light-mode {
 body.dark-mode {
     background-color: #000000;
     color: white;
-    
 }
 
-
-
 body.dark-mode .navbar {
-    
-    background-color: #344e41; /* Light navbar background */
     color: #ffffff; /* Dark navbar text */
     /* background-image: url(./../assets/Positivo_nav.png); */
 }
@@ -77,6 +67,16 @@ body.dark-mode .accordion-header{
 body.dark-mode .accordion-button{
     background-color: #000000;
     color: white;
+}
+
+body.light-mode .dynamic-text:hover {
+  color: #000000; /* Change color on hover */
+  mix-blend-mode: normal;
+}
+
+body.dark-mode .dynamic-text:hover {
+  color: #6f6f6f; /* Change color on hover */
+  mix-blend-mode: normal;
 }
 
 

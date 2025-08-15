@@ -1,93 +1,65 @@
 ---
 interface Service {
+        icon: string;
         title: string;
-        price: string;
-        description: string[];
+        description: string;
         
         
     }
      const services : Service[] = [
          {
-             title: "UI/UX Design",
-             price: "$100 per day",
-             description: [
-                 "Meeting 1:1",
-                 "Clean User-friendly and visually appealing designs",
-                 "Prototypes to visualize ideas before building",
-                 "Focus on your brand's identity and goals",
-                 "Designs that look good on all devices",
-             ]
+             icon: "fa-solid fa-glasses",
+             title: "1:1 Exploration",
+             description: "We meet to understand your business, goals, and what you want to achieve online."
              
              
          },
         {
-            title: "Frontend Development",
-            price: "$150 - $350 per day",
-            description: [
-                "Meeting 1:1",
-                "Custom websites tailored to your brand",
-                "Mobile-friendly designs",
-                "Fast loading times for a better user experience",
-                "Built with modern tools for performance and scalability"
-            ]
+            icon: "fa-solid fa-palette",
+            title: "Strategic Design",
+            description: "We create a visual concept and style that reflects your brand and engages your audience."
         
             
         },
         {
-            title: "Backend Development",
-            price: "$200 -$400 per day",
-            description: [
-                "Meeting 1:1",
-                "Smooth and secure website functionality",
-                "Set up user accounts, contact forms, and more",
-                "Manage and store data safely",
-                "Reliable performance even as your site grows"
-        ]
+            icon: "fa-solid fa-laptop-code",
+            title: "Development & Optimization",
+            description: "I build your website with clean, fast code optimized for search engines."
+        },
+        {
+            icon: "fa-brands fa-space-awesome",
+            title: "Launch + Training",
+            description: "We publish your site and I teach you how to manage it without depending on others."
         },
     ];
 ---
 
 
 
-    <div class="container" id="services">
-        <div class="greeting">
-                <h1>Services</h1> 
-                <p >Every project is different — and so is every budget.</p>            
-        </div>
-        <div class="cards d-flex flex-direction-column justify-content-center align-items-center">
-            {services.map((service) =>(
-                <div class="card" style="width: 20rem; ">
-                   
-                    <div class="card-body">
-        
-                      <h4 class="card-title mt-3 mb-2" style="font-weight: bold; font-size: 24px; ">{service.title}</h4>
-                      <h5 class="card-title  mb-4" style="font-weight: bold;">{service.price}</h5>
-                      <ul class="card-text" style="color: grey; font-size: 14px;">{service.description.map((item)=>(
-                        <li>{item}</li>
-                      ))} </ul>
-                      <a href="#rock-contact" class="btn-rock" onclick="scrollToContact(event)">Let’s Rock 🎸</a>
-                    </div>
-                </div>
-            ))}
-        </div>
-        <p class="text_cta">💬 Not sure where your project fits? No worries — <br>just tell me what you need, and I’ll guide you from there.</p>
-        <button onclick="window.location.href='/ServicesP'" class="btn-reach ">Build with Me 💆🏾</button>
-    </div>
-
-    <script>
-        function scrollToContact(event: MouseEvent) {
-          event.preventDefault(); // Prevent the default anchor behavior
-          const contactSection = document.getElementById("rock-contact");
-          if (contactSection) {
-            contactSection.scrollIntoView({ behavior: "smooth" }); // Smooth scroll to the section
-          }
-        }
-      </script>
-
-
+<div class="container" id="services">
+  <div class="greeting">
+      <h1>From idea to launch</h1> 
+      <p>Turning your vision into a professional, high-performing website.</p>            
+  </div>
+  <div class="cards">
+      {services.map((service, index) => (
+          <div class={`card-step ${index < services.length - 1 ? 'with-arrow' : ''}`}>
+              <div class="card" style="width: 20rem;">
+                  <div class="card-body">
+                      <div class="card-icon">
+                          <i class={service.icon}></i>
+                      </div>
+                      <h4 class="card-title mt-3 mb-2">{service.title}</h4>
+                      <p class="card-text">{service.description}</p>
+                  </div>
+              </div>
+          </div>
+      ))}
+  </div>
+  <button onclick="window.location.href='/ServicesP'" class="btn-reach">Start Your Project💆🏾</button>
+</div>
 
 <style>
-   
     @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 
@@ -102,20 +74,21 @@ interface Service {
         padding-top: 10px;
         padding-bottom: 80px;
         margin-top: 20px;
-        
-    
-    }
-
-    
-    .greeting {
-        text-align: end;
-        margin:5% 10% 3% 15%;
     }
 
     .greeting h1 {
+        text-align: end;
         font-size: 1.75rem; 
         font-weight: bold;
+        margin-right: 11%;
+        padding-top: 3%;
     }    
+
+
+    .greeting p {
+        text-align: end;
+        margin-right: 11%;
+    }
 
     .cards {
         display: flex;
@@ -123,7 +96,25 @@ interface Service {
         justify-content: center;
         margin-top: 20px;
         gap: 20px;
-        
+    }
+    .card-step {
+        position: relative;
+    }
+
+    .card-step.with-arrow::after {
+        content: "\f061"; /* Font Awesome arrow-right unicode */
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        position: absolute;
+        right: -35px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 2rem;
+        color: #344E41;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
     }
 
     .card{
@@ -137,54 +128,32 @@ interface Service {
         -moz-box-shadow: -2px 6px 49px -13px rgba(0,77,38,0.75);
         color: rgb(5, 5, 5);
         border-radius: 8px;
-        
     }
 
     .card-icon {
-        font-size: 1.5rem;
+        font-size: 3rem;
         background-color: #84A98C;
         margin-bottom: 10px;
-        padding: 15px;
+        padding: 40px;
         border-radius: 50%;
+        margin: 0 auto;
         display: flex;
         justify-content: center;
         align-items: center;
         width: 50px;
         height: 50px;
-
     }
+
+
 
     .card-body {
         display: flex;
         flex-direction: column; /* Use flexbox for layout */
-        align-items: flex-start; /* Align items vertically */
+        align-items: center; /* Align items vertically */
         /* Add spacing between the icon and text */
     }
 
     
-    .btn-rock {
-        background-color: #344E41;
-        color: #ffffff;
-        border: none;
-        padding: 5px 10px;
-        border-radius: 5px;
-        cursor: pointer;
-        margin: 0 auto; /* Center the button */
-        text-decoration:none;
-    }
-    
-    
-    .card-text{
-        margin-top: -15px;
-        text-align: left;
-    }
-    
-    .text_cta {
-        text-align: end;
-        margin: 3% 10% 1% 15%;
-        font-size: 1rem;
-        
-    }
 
 
     .btn-reach {
@@ -196,26 +165,77 @@ interface Service {
         padding: 10px;
         width: fit-content;;
         border-radius: 5px;
-        margin: 0 10% 0 81%;
+        margin: 5% 3% 0 71%;
 
     }
 
-    @media (min-width: 375px) and (max-width: 1294px) {
-        .btn-reach {
-            margin: 10% auto;
-            max-width: fit-content;
-            display: flex;
-            text-align: center;  
-        }
-        .container .greeting {
-            text-align: center;
-            margin: 5% auto;    
-        }
+         /* Mobile: up to 700px */
+@media (max-width: 700px) {
+  .container .greeting{
+    text-align: center;
+    margin: 5% auto 0 auto;
+  }
+  
+  .cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+  .card {
+    width: 90vw;
+    margin-left: 0;
+    margin-top: 16px;
+  }
 
-        .text_cta{
-            text-align: center;
-            margin: 3% 10% 1% 10%;
-        }
-    }
+  .btn-reach {
+    width: fit-content;
+    max-width: 320px;
+    margin: 10% auto;
+  }
+  .card-step.with-arrow::after{
+    transform: rotate(90deg);
+    right: 46%;
+    top: 100%;
+    font-size: 1.3rem;
+  }
+}
+
+/* Tablet: 701px to 1024px */
+@media (min-width: 701px) and (max-width: 1024px) {
+  .container .greeting {
+    text-align: center;
+    margin: 5% auto;
+  }
+  .greeting h1, .greeting p{
+    text-align: center;
+    margin: 0 auto;
+  }
+  .cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  .card {
+    width: 40vw;
+    min-width: 250px;
+    max-width: 350px;
+    margin-left: 0;
+  }
+  .btn-reach {
+    margin: 10% auto;
+    display: block;
+    width: fit-content;
+    max-width: 320px;
+  }
+  .card-step.with-arrow::after{
+    display: none;
+  }
+  
+  
+}
+
+/* Desktop: 1025px and up */
+
 </style>
 
