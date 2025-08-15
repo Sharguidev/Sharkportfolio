@@ -157,9 +157,16 @@ let projects: Project[] = [
 
       /* Mobile: up to 700px */
 @media (max-width: 700px) {
+
+  .container {
+    width: 100%;
+    height: fit-content;
+  }
+    
   .container .greeting{
+    padding-top: 10px;
     text-align: center;
-    margin: 5% auto 0 auto;
+    margin: 8% auto 0 auto;
   }
   .greeting h1, .greeting p{
     text-align: center;
@@ -186,6 +193,11 @@ let projects: Project[] = [
 
 /* Tablet: 701px to 1024px */
 @media (min-width: 701px) and (max-width: 1024px) {
+  .container {
+    width: 100%;
+    height: fit-content;
+  }
+
   .container .greeting {
     text-align: center;
     margin: 5% auto;
