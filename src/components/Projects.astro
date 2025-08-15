@@ -3,6 +3,7 @@ interface Project {
   title: string;
   description: string;
   img: string;
+  alt: string;
 }
 let projects: Project[] = [
   {
@@ -10,17 +11,20 @@ let projects: Project[] = [
     description:
       "This was a project made for new college students to find a roommate or to find a room to rent in a non-expensive community.",
     img: "https://github.com/Sharguidev/Sharkportfolio/blob/dda62a41c04460247ac6dcbebec27045a445f7cd/src/assets/Colivio.png?raw=true",
+    alt: "Screenshot of Find Your Roomie app interface showing roommate search filters and profile cards",
   },
   {
     title: "This Portfolio UX/UI",
     description:
       "I've designed this portfolio to showcase my skills with the projects, so any client can see my work.",
     img: "https://github.com/Sharguidev/Sharkportfolio/blob/dda62a41c04460247ac6dcbebec27045a445f7cd/src/assets/Portfolio1.png?raw=true",
+    alt: "Preview of Sharguidev personal portfolio website with modern UI layout and navigation",
   },
   {
     title: "UI/UX Design",
     description: "Designing intuitive and engaging user interfaces using",
     img: "https://github.com/Sharguidev/Sharkportfolio/blob/dda62a41c04460247ac6dcbebec27045a445f7cd/src/assets/Oport.png?raw=true",
+    alt: "Minimal loading screen design concept with animated progress indicator and brand logo",
   },
 ];
 ---
@@ -35,8 +39,8 @@ let projects: Project[] = [
   >
     {
       projects.map((Project) => (
-        <div class="card" style="width: 18rem; ">
-          <img src={Project.img} class="card-img-top" alt="..." />
+        <div class="card" style="width: 18rem;">
+          <img src={Project.img} class="card-img-top" alt={Project.alt} />
           <div class="card-body">
             <h4
               class="card-title mt-3 mb-4"
@@ -63,13 +67,15 @@ let projects: Project[] = [
   .container {
     max-width: 100%;
     font-family: "Inter";
+    background-color: rgba(163, 177, 138, 0.3); /* Color verde con 80% de opacidad */   
+    height: 700px;
     /* margin-right: 600px; */
   }
 
   .container .greeting {
     text-align: start;
     margin-left: 15%;
-    margin-top: 10px;
+    margin-top: 5%;
   }
 
    .greeting h1 {
@@ -77,6 +83,7 @@ let projects: Project[] = [
         font-weight: bold;
         text-align: left;
         margin-left: 3.5%; 
+        padding-top: 3%;
     }
     
     .greeting p{
@@ -93,7 +100,6 @@ let projects: Project[] = [
   }
 
   .card {
-    width: 20rem;
     height: fit-content;
     margin-left: 20px;
     margin-top: 20px;
@@ -104,6 +110,10 @@ let projects: Project[] = [
     color: rgb(5, 5, 5);
     border-radius: 8px;
   }
+
+  .card:hover {
+      transform: scale(1.05);
+    }
 
   .card-icon {
     font-size: 1.5rem;
@@ -123,16 +133,6 @@ let projects: Project[] = [
     flex-direction: column; /* Use flexbox for layout */
     align-items: center; /* Align items vertically  to center everything in the card*/
     /* Add spacing between the icon and text */
-  }
-
-  .btn-projects {
-    /*margin: 0 auto;  to center just the button*/
-    background-color: #344e41;
-    color: #ffffff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
   }
 
   .card-text {

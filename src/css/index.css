@@ -26,6 +26,16 @@ body::before {
   pointer-events: none;
 }
 
+body.dark-mode::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: url("./../assets/blob-scene-haikei-dark.svg") center/cover no-repeat;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
 @media (min-width: 701px) and (max-width: 1400px) {
     .container {
         max-width: 100%;
