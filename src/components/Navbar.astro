@@ -8,7 +8,7 @@ import "./../css/navbar.css"
 <div class="container-navbar">
     <nav class="navbar navbar-expand-lg ">
         <div class="container">
-          <a class="navbar-brand logo" href="/"><img id="theme-logo" src="https://github.com/Sharguidev/Sharkportfolio/blob/main/src/assets/Principal_nav.png?raw=true" alt="" style="width: 150px;"></a>
+          <a class="navbar-brand logo" href="/"><img id="theme-logo" src="https://github.com/Sharguidev/Sharkportfolio/blob/hero-section-improvements/src/assets/Foo_Nav_Verde.webp?raw=true" alt="" style="width: 150px;"></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -58,8 +58,8 @@ import "./../css/navbar.css"
       );
       if (themeLogo) {
         themeLogo.src = savedTheme === "dark-mode" 
-        ? "https://github.com/Sharguidev/Sharkportfolio/blob/main/src/assets/Positivo_nav.png?raw=true" 
-        : "https://github.com/Sharguidev/Sharkportfolio/blob/main/src/assets/Principal_nav.png?raw=true";
+        ? "https://github.com/Sharguidev/Sharkportfolio/blob/hero-section-improvements/src/assets/Foo_Nav_blanco.webp?raw=true" 
+        : "https://github.com/Sharguidev/Sharkportfolio/blob/hero-section-improvements/src/assets/Foo_Nav_Verde.webp?raw=true";
       }
     
     } else {
@@ -71,8 +71,8 @@ import "./../css/navbar.css"
       );
       if (themeLogo) {
         themeLogo.src = prefersDark 
-        ? "./src/assets/Positivo_nav.png" 
-        : "./src/assets/Principal_nav.png";
+        ? "./src/assets/Foo_Nav_blanco.webp" 
+        : "./src/assets/Foo_Nav_Verde.webp";
       }
     }
 
@@ -82,13 +82,13 @@ import "./../css/navbar.css"
         body.classList.remove("dark-mode");
         body.classList.add("light-mode");
         themeIcon?.classList.replace("fa-sun", "fa-moon");
-        themeLogo.src = "./src/assets/Principal_nav.png";
+        themeLogo.src = "./src/assets/Foo_Nav_Verde.webp";
         localStorage.setItem("theme", "light-mode");
       } else {
         body.classList.remove("light-mode");
         body.classList.add("dark-mode");
         themeIcon?.classList.replace("fa-moon", "fa-sun");
-        themeLogo.src = "./src/assets/Positivo_nav.png";
+        themeLogo.src = "./src/assets/Foo_Nav_blanco.webp";
         localStorage.setItem("theme", "dark-mode");
       }
     });
